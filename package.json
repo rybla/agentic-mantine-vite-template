@@ -25,7 +25,8 @@
     "vitest:watch": "vitest",
     "test": "pnpm run typecheck && pnpm run format && pnpm run lint && pnpm run depcruise && pnpm run vitest && pnpm run build",
     "storybook": "storybook dev -p 6006",
-    "storybook:build": "storybook build"
+    "storybook:build": "storybook build",
+    "deploy": "pnpm run build && ./deploy-to-github-pages.sh"
   },
   "dependencies": {
     "@mantine/carousel": "^9.4.0",
