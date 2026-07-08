@@ -18,4 +18,4 @@ This project uses [PostCSS](https://postcss.org).
 
 ## Code Validation
 
-After editing any source code, you must run `pnpm test`, which will run a collection of code validation tests. You must iteratively address these diagnostics and re-run `pnpm test` until all diagnostics have been addressed.
+After editing any source code, you must run `pnpm run test`, which will run a collection of code validation tests. You must iteratively address these diagnostics and re-run `pnpm run test` until all diagnostics have been addressed.
