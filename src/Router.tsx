@@ -15,9 +15,19 @@ const routes = Object.keys(pages).flatMap((path) => {
     name.toLowerCase() === "index" ? "/" : `/${name.toLowerCase()}`;
 
   // Cast the glob function to a React lazy-compatible dynamic component
-  const Component = lazy(
-    pages[path] as () => Promise<{ default: React.ComponentType<unknown> }>
-  );
+  const Component = lazy(async () => {
+    const loadPage = pages[path];
+    if (loadPage === undefined) {
+      throw new Error(`Page not found: ${path}`);
+    }
+    const module = (await loadPage()) as Record<
+      string,
+      React.ComponentType<unknown>
+    >;
+    const exportKey =
+      Object.keys(module).find((key) => key !== "default") || "default";
+    return { default: module[exportKey]! };
+  });
 
   return [{ path: routePath, element: <Component /> }];
 });
