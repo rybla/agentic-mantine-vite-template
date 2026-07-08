@@ -38,7 +38,7 @@ Expected string to end with suffix
 
 function makePageHtml(page, hmr = false) {
   console.log(`makePageHtml(${page}, ${hmr})`);
-  const script_src = `src/pages/${page}.page.tsx`;
+  const script_src = `/src/main.tsx`;
   return (
     `
   <!doctype html>
@@ -64,34 +64,79 @@ function makePageHtml(page, hmr = false) {
 
 const pages = [];
 for await (const page of fs.glob("src/pages/**/*.page.tsx")) {
-  pages.push(stripPrefix("src/pages", stripSuffix(".page.tsx", page)));
+  pages.push(stripPrefix("src/pages/", stripSuffix(".page.tsx", page)));
 }
 
 console.log(JSON.stringify(pages, null, 4));
 
+function resolveId(url) {
+  if (!url) return null;
+  const pathname = url.split("?")[0].split("#")[0];
+  const base = `/${packageConfig.name}/`;
+  let relativePath = pathname;
+  if (pathname.startsWith(base)) {
+    relativePath = pathname.substring(base.length);
+  } else if (pathname.startsWith("/")) {
+    relativePath = pathname.substring(1);
+  }
+
+  if (relativePath === "" || relativePath === "/") {
+    relativePath = "index";
+  }
+
+  if (relativePath.endsWith("/")) {
+    relativePath = relativePath.slice(0, -1);
+  }
+
+  if (relativePath.endsWith(".html")) {
+    relativePath = relativePath.slice(0, -5);
+  }
+
+  if (pages.includes(relativePath)) {
+    return relativePath;
+  }
+
+  return null;
+}
+
 function virtualPageHtml() {
+  let isBuild = false;
   return {
     name: "virtualPageHtml",
-    buildStart() {
-      for (const page of pages) {
-        this.emitFile({
-          type: "asset",
-          filename: `${page}.html`,
-          source: makePageHtml(page),
-        });
+    configResolved(config) {
+      isBuild = config.command === "build";
+    },
+    async buildStart() {
+      if (isBuild) {
+        for (const page of pages) {
+          await fs.writeFile(`${page}.html`, makePageHtml(page));
+        }
+      }
+    },
+    async buildEnd() {
+      if (isBuild) {
+        for (const page of pages) {
+          try {
+            await fs.unlink(`${page}.html`);
+          } catch (e) {
+            // ignore
+          }
+        }
       }
     },
     configureServer(server) {
-      server.middleware.use((req, res, next) => {
-        const page = resolveId(req.url);
-        if (page === null) return next();
-        console.log(`configureServer middleware use: page = ${page}`);
+      if (server.middlewares) {
+        server.middlewares.use((req, res, next) => {
+          const page = resolveId(req.url);
+          if (page === null) return next();
+          console.log(`configureServer middleware use: page = ${page}`);
 
-        res.statusCode = 200;
-        res.setHeader("Content-Type", "text/html");
-        res.end(makePageHtml(page, true));
-        return;
-      });
+          res.statusCode = 200;
+          res.setHeader("Content-Type", "text/html");
+          res.end(makePageHtml(page, true));
+          return;
+        });
+      }
     },
   };
 }

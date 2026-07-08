@@ -5,11 +5,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // import.meta.glob automatically creates lazy-loading import functions
 // for all files matching the pattern, triggering automatic code-splitting.
-const pages = import.meta.glob("./src/pages/**/*.tsx");
+const pages = import.meta.glob("./pages/**/*.page.tsx");
 
 const routes = Object.keys(pages).flatMap((path) => {
   // Extract a clean component name or route path from the file path
-  const name = path.match(/\.\/pages\/(.*)\.tsx$/)?.[1];
+  const name = path.match(/\.\/pages\/(.*)\.page\.tsx$/)?.[1];
   if (name === undefined) return [];
   const routePath =
     name.toLowerCase() === "index" ? "/" : `/${name.toLowerCase()}`;

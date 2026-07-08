@@ -1,6 +1,6 @@
 import { ColorSchemeToggle } from "@/components/ColorSchemeToggle/ColorSchemeToggle";
 import { Welcome } from "@/components/Welcome/Welcome";
-import classes from "@/page/Index.module.css";
+import classes from "@/pages/index.module.css";
 
 export function IndexPage() {
   return (
