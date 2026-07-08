@@ -1,8 +1,9 @@
 import react from "@vitejs/plugin-react";
+import fs from "fs/promises";
 import path from "path";
 import { defineConfig } from "vite";
+import tsconfigPaths from "vite-tsconfig-paths";
 import packageConfig from "./package.json";
-import fs from "fs/promises";
 
 function stripPrefix(prefix, s) {
   if (!s.startsWith(prefix)) {
@@ -38,15 +39,13 @@ Expected string to end with suffix
 
 function makePageHtml(page) {
   console.log(`makePageHtml(${page})`);
-  const script_src = `/src/main.tsx`;
-  const favicon_src = `/src/favicon.svg`;
   return (
     `
   <!doctype html>
   <html lang="en">
     <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="${favicon_src}" />
+    <link rel="icon" type="image/svg+xml" href="./src/favicon.svg" />
     <meta
       name="viewport"
       content="minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no"
@@ -55,7 +54,7 @@ function makePageHtml(page) {
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="${script_src}"></script>
+    <script type="module" src="./src/main.tsx"></script>
   </body>
   </html>
   `.trim() + "\n"
@@ -151,7 +150,7 @@ function virtualPageHtml() {
 }
 
 export default defineConfig({
-  plugins: [react(), virtualPageHtml()],
+  plugins: [react(), virtualPageHtml(), tsconfigPaths()],
 
   base: `/${packageConfig.name}/`,
 
