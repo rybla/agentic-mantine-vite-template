@@ -36,17 +36,17 @@ Expected string to end with suffix
   return s.substring(0, s.length - suffix.length);
 }
 
-function makePageHtml(page, hmr = false) {
-  console.log(`makePageHtml(${page}, ${hmr})`);
+function makePageHtml(page) {
+  console.log(`makePageHtml(${page})`);
   const script_src = `/src/main.tsx`;
+  const favicon_src = `/src/favicon.svg`;
   return (
     `
   <!doctype html>
   <html lang="en">
     <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
-    ${hmr === true ? `<script type="module" src="/@vite/client"></script>` : ""}
+    <link rel="icon" type="image/svg+xml" href="${favicon_src}" />
     <meta
       name="viewport"
       content="minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no"
@@ -126,15 +126,24 @@ function virtualPageHtml() {
     },
     configureServer(server) {
       if (server.middlewares) {
-        server.middlewares.use((req, res, next) => {
+        server.middlewares.use(async (req, res, next) => {
           const page = resolveId(req.url);
           if (page === null) return next();
           console.log(`configureServer middleware use: page = ${page}`);
 
-          res.statusCode = 200;
-          res.setHeader("Content-Type", "text/html");
-          res.end(makePageHtml(page, true));
-          return;
+          try {
+            const rawHtml = makePageHtml(page);
+            const transformedHtml = await server.transformIndexHtml(
+              req.url,
+              rawHtml
+            );
+
+            res.statusCode = 200;
+            res.setHeader("Content-Type", "text/html");
+            res.end(transformedHtml);
+          } catch (e) {
+            return next(e);
+          }
         });
       }
     },
