@@ -1,3 +1,497 @@
 .page {
-  display: block;
+  font-family: var(--mantine-font-family-monospace, monospace);
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  color: var(--mantine-color-black, #000);
+  background-color: var(--mantine-color-white, #fff);
+  min-height: 100vh;
+}
+
+[data-mantine-color-scheme="dark"] .page {
+  color: var(--mantine-color-white, #fff);
+  background-color: var(--mantine-color-dark-8, #141517);
+}
+
+.header {
+  border: 1px solid var(--mantine-color-black, #000);
+  box-shadow: 4px 4px 0px 0px var(--mantine-color-black, #000);
+  background-color: var(--mantine-color-white, #fff);
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+[data-mantine-color-scheme="dark"] .header {
+  border-color: var(--mantine-color-white, #fff);
+  box-shadow: 4px 4px 0px 0px var(--mantine-color-white, #fff);
+  background-color: var(--mantine-color-dark-7, #1a1b1e);
+}
+
+.brand {
+  font-weight: 900;
+  font-size: 1.25rem;
+  letter-spacing: 2px;
+  color: #ff007f; /* Neon pink */
+  animation: crt-flicker 3s steps(2) infinite;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+[data-mantine-color-scheme="dark"] .brand {
+  color: #39ff14; /* Neon green */
+}
+
+.brand:hover {
+  animation: jitter 0.08s steps(2) infinite;
+}
+
+.nav {
+  display: flex;
+  gap: 12px;
+}
+
+.navLink {
+  border: 1px solid var(--mantine-color-black, #000);
+  box-shadow: 2px 2px 0px 0px var(--mantine-color-black, #000);
+  background-color: var(--mantine-color-white, #fff);
+  color: var(--mantine-color-black, #000);
+  text-decoration: none;
+  padding: 6px 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  transition: all 0.05s steps(2);
+}
+
+[data-mantine-color-scheme="dark"] .navLink {
+  border-color: var(--mantine-color-white, #fff);
+  box-shadow: 2px 2px 0px 0px var(--mantine-color-white, #fff);
+  background-color: var(--mantine-color-dark-6, #2c2e33);
+  color: var(--mantine-color-white, #fff);
+}
+
+.navLink:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px 0px var(--mantine-color-black, #000);
+}
+
+[data-mantine-color-scheme="dark"] .navLink:hover {
+  box-shadow: 3px 3px 0px 0px var(--mantine-color-white, #fff);
+}
+
+.activeNavLinkHome {
+  background-color: #39ff14; /* Neon green */
+  color: #000;
+}
+
+.activeNavLinkAbout {
+  background-color: #ff007f; /* Neon pink */
+  color: #000;
+}
+
+/* System Hero */
+.hero {
+  border: 1px solid var(--mantine-color-black, #000);
+  box-shadow: 5px 5px 0px 0px var(--mantine-color-black, #000);
+  background-color: var(--mantine-color-white, #fff);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+[data-mantine-color-scheme="dark"] .hero {
+  border-color: var(--mantine-color-white, #fff);
+  box-shadow: 5px 5px 0px 0px var(--mantine-color-white, #fff);
+  background-color: var(--mantine-color-dark-7, #1a1b1e);
+}
+
+/* Add a scanner visual line overlay in the hero section */
+.scanlineOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(rgb(18, 16, 16, 0) 50%, rgb(0, 0, 0, 0.12) 50%),
+    linear-gradient(
+      90deg,
+      rgb(255, 0, 0, 0.04),
+      rgb(0, 255, 0, 0.02),
+      rgb(0, 0, 255, 0.04)
+    );
+  background-size:
+    100% 4px,
+    6px 100%;
+  pointer-events: none;
+}
+
+.sweep {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(57, 255, 20, 0.25); /* Semi-transparent neon green */
+  animation: scan-sweep 4s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes scan-sweep {
+  0% {
+    top: 0%;
+  }
+
+  100% {
+    top: 100%;
+  }
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  line-height: 1.1;
+  color: var(--mantine-color-black, #000);
+}
+
+[data-mantine-color-scheme="dark"] .title {
+  color: var(--mantine-color-white, #fff);
+}
+
+.heroSubtitle {
+  font-size: 0.95rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--mantine-color-gray-6, #868e96);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+[data-mantine-color-scheme="dark"] .heroSubtitle {
+  color: var(--mantine-color-dark-3, #909296);
+}
+
+.accentSpan {
+  color: #0ff; /* Neon cyan */
+  font-weight: 900;
+}
+
+[data-mantine-color-scheme="dark"] .accentSpan {
+  color: #ff5f1f; /* Neon orange */
+}
+
+/* Grid layout for columns */
+.dashboardGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 900px) {
+  .dashboardGrid {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}
+
+/* Retro Control Card */
+.card {
+  border: 1px solid var(--mantine-color-black, #000);
+  box-shadow: 4px 4px 0px 0px var(--mantine-color-black, #000);
+  background-color: var(--mantine-color-white, #fff);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+[data-mantine-color-scheme="dark"] .card {
+  border-color: var(--mantine-color-white, #fff);
+  box-shadow: 4px 4px 0px 0px var(--mantine-color-white, #fff);
+  background-color: var(--mantine-color-dark-7, #1a1b1e);
+}
+
+.cardHeader {
+  border-bottom: 1px solid var(--mantine-color-black, #000);
+  background-color: var(--mantine-color-black, #000);
+  color: #ff0; /* Neon yellow */
+  padding: 8px 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+[data-mantine-color-scheme="dark"] .cardHeader {
+  border-bottom-color: var(--mantine-color-white, #fff);
+  background-color: var(--mantine-color-white, #fff);
+  color: #ff007f; /* Neon pink */
+}
+
+.cardBody {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+}
+
+/* Interactive custom styled button */
+.accentButton {
+  border: 1px solid var(--mantine-color-black, #000);
+  box-shadow: 3px 3px 0px 0px var(--mantine-color-black, #000);
+  background-color: #ff007f; /* Neon pink background */
+  color: #fff;
+  font-family: var(--mantine-font-family-monospace, monospace);
+  font-weight: 900;
+  cursor: pointer;
+  padding: 10px 16px;
+  text-transform: uppercase;
+  text-align: center;
+  transition: all 0.05s steps(2);
+  width: 100%;
+  display: inline-block;
+  letter-spacing: 1px;
+}
+
+[data-mantine-color-scheme="dark"] .accentButton {
+  border-color: var(--mantine-color-white, #fff);
+  box-shadow: 3px 3px 0px 0px var(--mantine-color-white, #fff);
+  background-color: #0ff; /* Neon cyan in dark mode */
+  color: #000;
+}
+
+.accentButton:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px 0px var(--mantine-color-black, #000);
+  filter: brightness(1.1);
+}
+
+[data-mantine-color-scheme="dark"] .accentButton:hover {
+  box-shadow: 4px 4px 0px 0px var(--mantine-color-white, #fff);
+}
+
+.accentButton:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px 0px var(--mantine-color-black, #000);
+}
+
+[data-mantine-color-scheme="dark"] .accentButton:active {
+  box-shadow: 1px 1px 0px 0px var(--mantine-color-white, #fff);
+}
+
+/* Control buttons list */
+.controlGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.secondaryButton {
+  border: 1px solid var(--mantine-color-black, #000);
+  box-shadow: 2px 2px 0px 0px var(--mantine-color-black, #000);
+  background-color: var(--mantine-color-white, #fff);
+  color: var(--mantine-color-black, #000);
+  font-family: var(--mantine-font-family-monospace, monospace);
+  font-weight: 800;
+  cursor: pointer;
+  padding: 8px 12px;
+  text-transform: uppercase;
+  text-align: center;
+  transition: all 0.05s steps(2);
+  font-size: 0.8rem;
+}
+
+[data-mantine-color-scheme="dark"] .secondaryButton {
+  border-color: var(--mantine-color-white, #fff);
+  box-shadow: 2px 2px 0px 0px var(--mantine-color-white, #fff);
+  background-color: var(--mantine-color-dark-6, #2c2e33);
+  color: var(--mantine-color-white, #fff);
+}
+
+.secondaryButton:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px 0px var(--mantine-color-black, #000);
+  background-color: #ff0; /* Neon yellow on hover */
+  color: #000;
+}
+
+[data-mantine-color-scheme="dark"] .secondaryButton:hover {
+  box-shadow: 3px 3px 0px 0px var(--mantine-color-white, #fff);
+  background-color: #39ff14; /* Neon green on hover in dark mode */
+  color: #000;
+}
+
+.secondaryButton:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px 0px var(--mantine-color-black, #000);
+}
+
+[data-mantine-color-scheme="dark"] .secondaryButton:active {
+  box-shadow: 1px 1px 0px 0px var(--mantine-color-white, #fff);
+}
+
+/* Logs and system messages list */
+.consoleLog {
+  border: 1px solid var(--mantine-color-black, #000);
+  background-color: var(--mantine-color-gray-1, #f1f3f5);
+  padding: 12px;
+  font-family: var(--mantine-font-family-monospace, monospace);
+  font-size: 0.8rem;
+  height: 140px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+[data-mantine-color-scheme="dark"] .consoleLog {
+  border-color: var(--mantine-color-white, #fff);
+  background-color: var(--mantine-color-dark-9, #0b0c0d);
+}
+
+.consoleLine {
+  display: flex;
+  gap: 8px;
+}
+
+.timestamp {
+  color: #ff007f; /* Neon pink */
+  font-weight: bold;
+}
+
+[data-mantine-color-scheme="dark"] .timestamp {
+  color: #39ff14; /* Neon green */
+}
+
+.text {
+  word-break: break-all;
+}
+
+/* Animations */
+@keyframes crt-flicker {
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    opacity: 1;
+    filter: none;
+  }
+
+  20%,
+  24%,
+  55% {
+    opacity: 0.8;
+    filter: contrast(1.5) brightness(1.2);
+  }
+
+  22% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes jitter {
+  0% {
+    transform: translate(0, 0) skew(0deg);
+  }
+
+  10% {
+    transform: translate(-1px, 0.5px) skew(-1deg);
+  }
+
+  20% {
+    transform: translate(0.5px, -1px) skew(0.5deg);
+  }
+
+  30% {
+    transform: translate(-0.5px, -0.5px) skew(0deg);
+  }
+
+  40% {
+    transform: translate(1px, 1px) skew(1deg);
+  }
+
+  50% {
+    transform: translate(-1px, -1px) skew(-0.5deg);
+  }
+
+  60% {
+    transform: translate(0.5px, 0.5px) skew(0.5deg);
+  }
+
+  70% {
+    transform: translate(-0.5px, 1px) skew(0deg);
+  }
+
+  80% {
+    transform: translate(1px, -1px) skew(-1deg);
+  }
+
+  90% {
+    transform: translate(-1px, 0.5px) skew(0.5deg);
+  }
+
+  100% {
+    transform: translate(0, 0) skew(0deg);
+  }
+}
+
+/* Style for the footer */
+.footer {
+  border: 1px solid var(--mantine-color-black, #000);
+  box-shadow: 2px 2px 0px 0px var(--mantine-color-black, #000);
+  background-color: var(--mantine-color-black, #000);
+  color: var(--mantine-color-white, #fff);
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+[data-mantine-color-scheme="dark"] .footer {
+  border-color: var(--mantine-color-white, #fff);
+  box-shadow: 2px 2px 0px 0px var(--mantine-color-white, #fff);
+  background-color: var(--mantine-color-dark-7, #1a1b1e);
+}
+
+.colorToggle {
+  cursor: pointer;
+  border: 1px solid var(--mantine-color-white, #fff);
+  background-color: transparent;
+  color: var(--mantine-color-white, #fff);
+  padding: 4px 8px;
+  font-family: var(--mantine-font-family-monospace, monospace);
+  font-weight: bold;
+  font-size: 0.75rem;
+  transition: all 0.05s steps(2);
+}
+
+.colorToggle:hover {
+  background-color: var(--mantine-color-white, #fff);
+  color: var(--mantine-color-black, #000);
 }
