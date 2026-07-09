@@ -6,20 +6,20 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-  color: var(--mantine-color-black, #000);
-  background-color: var(--mantine-color-white, #fff);
+  color: var(--mantine-color-bright);
+  background-color: var(--mantine-color-body);
   min-height: 100vh;
 }
 
 [data-mantine-color-scheme="dark"] .page {
-  color: var(--mantine-color-white, #fff);
-  background-color: var(--mantine-color-dark-8, #141517);
+  color: var(--mantine-color-body);
+  background-color: var(--mantine-color-dark-8);
 }
 
 .header {
-  border: 1px solid var(--mantine-color-black, #000);
-  box-shadow: 4px 4px 0px 0px var(--mantine-color-black, #000);
-  background-color: var(--mantine-color-white, #fff);
+  border: 1px solid var(--mantine-color-bright);
+  box-shadow: 4px 4px 0px 0px var(--mantine-color-bright);
+  background-color: var(--mantine-color-body);
   padding: 16px 24px;
   display: flex;
   justify-content: space-between;
@@ -29,16 +29,16 @@
 }
 
 [data-mantine-color-scheme="dark"] .header {
-  border-color: var(--mantine-color-white, #fff);
-  box-shadow: 4px 4px 0px 0px var(--mantine-color-white, #fff);
-  background-color: var(--mantine-color-dark-7, #1a1b1e);
+  border-color: var(--mantine-color-body);
+  box-shadow: 4px 4px 0px 0px var(--mantine-color-body);
+  background-color: var(--mantine-color-dark-7);
 }
 
 .brand {
   font-weight: 900;
   font-size: 1.25rem;
   letter-spacing: 2px;
-  color: #ff007f; /* Neon pink */
+  color: var(--mantine-color-pink-filled); /* Neon pink */
   animation: crt-flicker 3s steps(2) infinite;
   cursor: pointer;
   display: flex;
@@ -47,7 +47,7 @@
 }
 
 [data-mantine-color-scheme="dark"] .brand {
-  color: #39ff14; /* Neon green */
+  color: var(--mantine-color-green-filled); /* Neon green */
 }
 
 .brand:hover {
@@ -60,10 +60,10 @@
 }
 
 .navLink {
-  border: 1px solid var(--mantine-color-black, #000);
-  box-shadow: 2px 2px 0px 0px var(--mantine-color-black, #000);
-  background-color: var(--mantine-color-white, #fff);
-  color: var(--mantine-color-black, #000);
+  border: 1px solid var(--mantine-color-bright);
+  box-shadow: 2px 2px 0px 0px var(--mantine-color-bright);
+  background-color: var(--mantine-color-body);
+  color: var(--mantine-color-bright);
   text-decoration: none;
   padding: 6px 14px;
   font-weight: bold;
@@ -73,36 +73,36 @@
 }
 
 [data-mantine-color-scheme="dark"] .navLink {
-  border-color: var(--mantine-color-white, #fff);
-  box-shadow: 2px 2px 0px 0px var(--mantine-color-white, #fff);
-  background-color: var(--mantine-color-dark-6, #2c2e33);
-  color: var(--mantine-color-white, #fff);
+  border-color: var(--mantine-color-body);
+  box-shadow: 2px 2px 0px 0px var(--mantine-color-body);
+  background-color: var(--mantine-color-dark-6);
+  color: var(--mantine-color-body);
 }
 
 .navLink:hover {
   transform: translate(-1px, -1px);
-  box-shadow: 3px 3px 0px 0px var(--mantine-color-black, #000);
+  box-shadow: 3px 3px 0px 0px var(--mantine-color-bright);
 }
 
 [data-mantine-color-scheme="dark"] .navLink:hover {
-  box-shadow: 3px 3px 0px 0px var(--mantine-color-white, #fff);
+  box-shadow: 3px 3px 0px 0px var(--mantine-color-body);
 }
 
 .activeNavLinkHome {
-  background-color: #39ff14; /* Neon green */
-  color: #000;
+  background-color: var(--mantine-color-green-filled); /* Neon green */
+  color: var(--mantine-color-bright);
 }
 
 .activeNavLinkAbout {
-  background-color: #ff007f; /* Neon pink */
-  color: #000;
+  background-color: var(--mantine-color-pink-filled); /* Neon pink */
+  color: var(--mantine-color-bright);
 }
 
 /* System Hero */
 .hero {
-  border: 1px solid var(--mantine-color-black, #000);
-  box-shadow: 5px 5px 0px 0px var(--mantine-color-black, #000);
-  background-color: var(--mantine-color-white, #fff);
+  border: 1px solid var(--mantine-color-bright);
+  box-shadow: 5px 5px 0px 0px var(--mantine-color-bright);
+  background-color: var(--mantine-color-body);
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -112,9 +112,9 @@
 }
 
 [data-mantine-color-scheme="dark"] .hero {
-  border-color: var(--mantine-color-white, #fff);
-  box-shadow: 5px 5px 0px 0px var(--mantine-color-white, #fff);
-  background-color: var(--mantine-color-dark-7, #1a1b1e);
+  border-color: var(--mantine-color-body);
+  box-shadow: 5px 5px 0px 0px var(--mantine-color-body);
+  background-color: var(--mantine-color-dark-7);
 }
 
 /* Add a scanner visual line overlay in the hero section */
@@ -125,12 +125,15 @@
   width: 100%;
   height: 100%;
   background:
-    linear-gradient(rgb(18, 16, 16, 0) 50%, rgb(0, 0, 0, 0.12) 50%),
+    linear-gradient(
+      transparent 50%,
+      color-mix(in srgb, var(--mantine-color-bright) 12%) 50%
+    ),
     linear-gradient(
       90deg,
-      rgb(255, 0, 0, 0.04),
-      rgb(0, 255, 0, 0.02),
-      rgb(0, 0, 255, 0.04)
+      color-mix(in srgb, var(--mantine-color-pink-filled) 4%),
+      color-mix(in srgb, var(--mantine-color-green-filled) 2%),
+      color-mix(in srgb, var(--mantine-color-cyan-filled) 4%)
     );
   background-size:
     100% 4px,
@@ -144,7 +147,11 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: rgb(57, 255, 20, 0.25); /* Semi-transparent neon green */
+  background-color: color-mix(
+    in srgb,
+    var(--mantine-color-green-filled) 25%,
+    transparent
+  ); /* Semi-transparent neon green */
   animation: scan-sweep 4s linear infinite;
   pointer-events: none;
 }
@@ -166,34 +173,34 @@
   letter-spacing: 2px;
   margin: 0;
   line-height: 1.1;
-  color: var(--mantine-color-black, #000);
+  color: var(--mantine-color-bright);
 }
 
 [data-mantine-color-scheme="dark"] .title {
-  color: var(--mantine-color-white, #fff);
+  color: var(--mantine-color-body);
 }
 
 .heroSubtitle {
   font-size: 0.95rem;
   font-weight: bold;
   text-transform: uppercase;
-  color: var(--mantine-color-gray-6, #868e96);
+  color: var(--mantine-color-dark-light);
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
 }
 
 [data-mantine-color-scheme="dark"] .heroSubtitle {
-  color: var(--mantine-color-dark-3, #909296);
+  color: var(--mantine-color-dark-3);
 }
 
 .accentSpan {
-  color: #0ff; /* Neon cyan */
+  color: var(--mantine-color-cyan-filled); /* Neon cyan */
   font-weight: 900;
 }
 
 [data-mantine-color-scheme="dark"] .accentSpan {
-  color: #ff5f1f; /* Neon orange */
+  color: var(--mantine-color-orange-filled); /* Neon orange */
 }
 
 /* Grid layout for columns */
@@ -211,9 +218,9 @@
 
 /* Retro Control Card */
 .card {
-  border: 1px solid var(--mantine-color-black, #000);
-  box-shadow: 4px 4px 0px 0px var(--mantine-color-black, #000);
-  background-color: var(--mantine-color-white, #fff);
+  border: 1px solid var(--mantine-color-bright);
+  box-shadow: 4px 4px 0px 0px var(--mantine-color-bright);
+  background-color: var(--mantine-color-body);
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -222,15 +229,15 @@
 }
 
 [data-mantine-color-scheme="dark"] .card {
-  border-color: var(--mantine-color-white, #fff);
-  box-shadow: 4px 4px 0px 0px var(--mantine-color-white, #fff);
-  background-color: var(--mantine-color-dark-7, #1a1b1e);
+  border-color: var(--mantine-color-body);
+  box-shadow: 4px 4px 0px 0px var(--mantine-color-body);
+  background-color: var(--mantine-color-dark-7);
 }
 
 .cardHeader {
-  border-bottom: 1px solid var(--mantine-color-black, #000);
-  background-color: var(--mantine-color-black, #000);
-  color: #ff0; /* Neon yellow */
+  border-bottom: 1px solid var(--mantine-color-bright);
+  background-color: var(--mantine-color-bright);
+  color: var(--mantine-color-yellow-filled); /* Neon yellow */
   padding: 8px 16px;
   font-weight: 900;
   text-transform: uppercase;
@@ -242,9 +249,9 @@
 }
 
 [data-mantine-color-scheme="dark"] .cardHeader {
-  border-bottom-color: var(--mantine-color-white, #fff);
-  background-color: var(--mantine-color-white, #fff);
-  color: #ff007f; /* Neon pink */
+  border-bottom-color: var(--mantine-color-body);
+  background-color: var(--mantine-color-body);
+  color: var(--mantine-color-pink-filled); /* Neon pink */
 }
 
 .cardBody {
@@ -257,10 +264,10 @@
 
 /* Interactive custom styled button */
 .accentButton {
-  border: 1px solid var(--mantine-color-black, #000);
-  box-shadow: 3px 3px 0px 0px var(--mantine-color-black, #000);
-  background-color: #ff007f; /* Neon pink background */
-  color: #fff;
+  border: 1px solid var(--mantine-color-bright);
+  box-shadow: 3px 3px 0px 0px var(--mantine-color-bright);
+  background-color: var(--mantine-color-pink-filled); /* Neon pink background */
+  color: var(--mantine-color-body);
   font-family: var(--mantine-font-family-monospace, monospace);
   font-weight: 900;
   cursor: pointer;
@@ -274,29 +281,29 @@
 }
 
 [data-mantine-color-scheme="dark"] .accentButton {
-  border-color: var(--mantine-color-white, #fff);
-  box-shadow: 3px 3px 0px 0px var(--mantine-color-white, #fff);
-  background-color: #0ff; /* Neon cyan in dark mode */
-  color: #000;
+  border-color: var(--mantine-color-body);
+  box-shadow: 3px 3px 0px 0px var(--mantine-color-body);
+  background-color: var(--mantine-color-cyan-filled); /* Neon cyan in dark mode */
+  color: var(--mantine-color-bright);
 }
 
 .accentButton:hover {
   transform: translate(-1px, -1px);
-  box-shadow: 4px 4px 0px 0px var(--mantine-color-black, #000);
+  box-shadow: 4px 4px 0px 0px var(--mantine-color-bright);
   filter: brightness(1.1);
 }
 
 [data-mantine-color-scheme="dark"] .accentButton:hover {
-  box-shadow: 4px 4px 0px 0px var(--mantine-color-white, #fff);
+  box-shadow: 4px 4px 0px 0px var(--mantine-color-body);
 }
 
 .accentButton:active {
   transform: translate(2px, 2px);
-  box-shadow: 1px 1px 0px 0px var(--mantine-color-black, #000);
+  box-shadow: 1px 1px 0px 0px var(--mantine-color-bright);
 }
 
 [data-mantine-color-scheme="dark"] .accentButton:active {
-  box-shadow: 1px 1px 0px 0px var(--mantine-color-white, #fff);
+  box-shadow: 1px 1px 0px 0px var(--mantine-color-body);
 }
 
 /* Control buttons list */
@@ -307,10 +314,10 @@
 }
 
 .secondaryButton {
-  border: 1px solid var(--mantine-color-black, #000);
-  box-shadow: 2px 2px 0px 0px var(--mantine-color-black, #000);
-  background-color: var(--mantine-color-white, #fff);
-  color: var(--mantine-color-black, #000);
+  border: 1px solid var(--mantine-color-bright);
+  box-shadow: 2px 2px 0px 0px var(--mantine-color-bright);
+  background-color: var(--mantine-color-body);
+  color: var(--mantine-color-bright);
   font-family: var(--mantine-font-family-monospace, monospace);
   font-weight: 800;
   cursor: pointer;
@@ -322,38 +329,40 @@
 }
 
 [data-mantine-color-scheme="dark"] .secondaryButton {
-  border-color: var(--mantine-color-white, #fff);
-  box-shadow: 2px 2px 0px 0px var(--mantine-color-white, #fff);
-  background-color: var(--mantine-color-dark-6, #2c2e33);
-  color: var(--mantine-color-white, #fff);
+  border-color: var(--mantine-color-body);
+  box-shadow: 2px 2px 0px 0px var(--mantine-color-body);
+  background-color: var(--mantine-color-dark-6);
+  color: var(--mantine-color-body);
 }
 
 .secondaryButton:hover {
   transform: translate(-1px, -1px);
-  box-shadow: 3px 3px 0px 0px var(--mantine-color-black, #000);
-  background-color: #ff0; /* Neon yellow on hover */
-  color: #000;
+  box-shadow: 3px 3px 0px 0px var(--mantine-color-bright);
+  background-color: var(--mantine-color-yellow-filled); /* Neon yellow on hover */
+  color: var(--mantine-color-bright);
 }
 
 [data-mantine-color-scheme="dark"] .secondaryButton:hover {
-  box-shadow: 3px 3px 0px 0px var(--mantine-color-white, #fff);
-  background-color: #39ff14; /* Neon green on hover in dark mode */
-  color: #000;
+  box-shadow: 3px 3px 0px 0px var(--mantine-color-body);
+  background-color: var(
+    --mantine-color-green-filled
+  ); /* Neon green on hover in dark mode */
+  color: var(--mantine-color-bright);
 }
 
 .secondaryButton:active {
   transform: translate(1px, 1px);
-  box-shadow: 1px 1px 0px 0px var(--mantine-color-black, #000);
+  box-shadow: 1px 1px 0px 0px var(--mantine-color-bright);
 }
 
 [data-mantine-color-scheme="dark"] .secondaryButton:active {
-  box-shadow: 1px 1px 0px 0px var(--mantine-color-white, #fff);
+  box-shadow: 1px 1px 0px 0px var(--mantine-color-body);
 }
 
 /* Logs and system messages list */
 .consoleLog {
-  border: 1px solid var(--mantine-color-black, #000);
-  background-color: var(--mantine-color-gray-1, #f1f3f5);
+  border: 1px solid var(--mantine-color-bright);
+  background-color: var(--mantine-color-default-hover);
   padding: 12px;
   font-family: var(--mantine-font-family-monospace, monospace);
   font-size: 0.8rem;
@@ -365,8 +374,8 @@
 }
 
 [data-mantine-color-scheme="dark"] .consoleLog {
-  border-color: var(--mantine-color-white, #fff);
-  background-color: var(--mantine-color-dark-9, #0b0c0d);
+  border-color: var(--mantine-color-body);
+  background-color: var(--mantine-color-dark-9);
 }
 
 .consoleLine {
@@ -375,12 +384,12 @@
 }
 
 .timestamp {
-  color: #ff007f; /* Neon pink */
+  color: var(--mantine-color-pink-filled); /* Neon pink */
   font-weight: bold;
 }
 
 [data-mantine-color-scheme="dark"] .timestamp {
-  color: #39ff14; /* Neon green */
+  color: var(--mantine-color-green-filled); /* Neon green */
 }
 
 .text {
@@ -461,10 +470,10 @@
 
 /* Style for the footer */
 .footer {
-  border: 1px solid var(--mantine-color-black, #000);
-  box-shadow: 2px 2px 0px 0px var(--mantine-color-black, #000);
-  background-color: var(--mantine-color-black, #000);
-  color: var(--mantine-color-white, #fff);
+  border: 1px solid var(--mantine-color-bright);
+  box-shadow: 2px 2px 0px 0px var(--mantine-color-bright);
+  background-color: var(--mantine-color-bright);
+  color: var(--mantine-color-body);
   padding: 12px 24px;
   display: flex;
   justify-content: space-between;
@@ -474,16 +483,16 @@
 }
 
 [data-mantine-color-scheme="dark"] .footer {
-  border-color: var(--mantine-color-white, #fff);
-  box-shadow: 2px 2px 0px 0px var(--mantine-color-white, #fff);
-  background-color: var(--mantine-color-dark-7, #1a1b1e);
+  border-color: var(--mantine-color-body);
+  box-shadow: 2px 2px 0px 0px var(--mantine-color-body);
+  background-color: var(--mantine-color-dark-7);
 }
 
 .colorToggle {
   cursor: pointer;
-  border: 1px solid var(--mantine-color-white, #fff);
+  border: 1px solid var(--mantine-color-body);
   background-color: transparent;
-  color: var(--mantine-color-white, #fff);
+  color: var(--mantine-color-body);
   padding: 4px 8px;
   font-family: var(--mantine-font-family-monospace, monospace);
   font-weight: bold;
@@ -492,6 +501,6 @@
 }
 
 .colorToggle:hover {
-  background-color: var(--mantine-color-white, #fff);
-  color: var(--mantine-color-black, #000);
+  background-color: var(--mantine-color-body);
+  color: var(--mantine-color-bright);
 }

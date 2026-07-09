@@ -15,12 +15,12 @@ export interface RandomSamplerWheelProps {
 }
 
 const DEFAULT_COLORS = [
-  "#FF007F", // Neon Pink
-  "#39FF14", // Neon Green
-  "#00FFFF", // Neon Cyan
-  "#FFFF00", // Neon Yellow
-  "#FF5F1F", // Neon Orange
-  "#BD00FF", // Neon Purple
+  "var(--mantine-color-pink-filled)", // Neon Pink
+  "var(--mantine-color-green-filled)", // Neon Green
+  "var(--mantine-color-cyan-filled)", // Neon Cyan
+  "var(--mantine-color-yellow-filled)", // Neon Yellow
+  "var(--mantine-color-orange-filled)", // Neon Orange
+  "var(--mantine-color-purple-filled)", // Neon Purple
 ];
 
 export function RandomSamplerWheel({
@@ -158,8 +158,8 @@ export function RandomSamplerWheel({
         <svg className={needleClasses} viewBox="0 0 20 30" data-testid="needle">
           <path
             d="M 10 30 L 20 0 L 0 0 Z"
-            fill="#FF007F"
-            stroke="#000000"
+            fill="var(--mantine-color-pink-filled)"
+            stroke="var(--mantine-color-bright)"
             strokeWidth="1.5"
           />
         </svg>
@@ -185,7 +185,8 @@ export function RandomSamplerWheel({
               const pathData = `M 150 150 L ${pA.x} ${pA.y} A 140 140 0 ${largeArcFlag} 1 ${pB.x} ${pB.y} Z`;
 
               // High-contrast cycling colors
-              const color = colors[i % colors.length] || "#FFFFFF";
+              const color =
+                colors[i % colors.length] || "var(--mantine-color-body)";
 
               // Place text in center of slice, rotated radially
               const midAngle = angleA + sliceAngle / 2;
@@ -201,14 +202,14 @@ export function RandomSamplerWheel({
                   <path
                     d={pathData}
                     fill={color}
-                    stroke="#000000"
+                    stroke="var(--mantine-color-bright)"
                     strokeWidth="1.5"
                     data-testid={`wedge-${i}`}
                   />
                   <text
                     x={textPos.x}
                     y={textPos.y}
-                    fill="#000000"
+                    fill="var(--mantine-color-bright)"
                     fontWeight="900"
                     fontSize={totalOptions > 8 ? "9" : "11"}
                     fontFamily="monospace"
@@ -227,8 +228,8 @@ export function RandomSamplerWheel({
               cx="150"
               cy="150"
               r="15"
-              fill="#000000"
-              stroke="#FFFFFF"
+              fill="var(--mantine-color-bright)"
+              stroke="var(--mantine-color-body)"
               strokeWidth="2.5"
             />
           </g>

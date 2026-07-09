@@ -1,7 +1,7 @@
 .container {
-  border: 1px solid var(--mantine-color-black, #000);
-  box-shadow: 5px 5px 0px 0px var(--mantine-color-black, #000);
-  background-color: var(--mantine-color-white, #fff);
+  border: 1px solid var(--mantine-color-bright);
+  box-shadow: 5px 5px 0px 0px var(--mantine-color-bright);
+  background-color: var(--mantine-color-body);
   padding: 20px;
   font-family: var(--mantine-font-family-monospace, monospace);
   display: flex;
@@ -11,9 +11,9 @@
 }
 
 [data-mantine-color-scheme="dark"] .container {
-  background-color: var(--mantine-color-dark-7, #1a1b1e);
-  border-color: var(--mantine-color-white, #fff);
-  box-shadow: 5px 5px 0px 0px var(--mantine-color-white, #fff);
+  background-color: var(--mantine-color-dark-7);
+  border-color: var(--mantine-color-body);
+  box-shadow: 5px 5px 0px 0px var(--mantine-color-body);
 }
 
 .searchWrapper {
@@ -28,44 +28,44 @@
   font-size: 1rem;
   font-weight: bold;
   padding: 10px 14px;
-  border: 1px solid var(--mantine-color-black, #000);
-  box-shadow: 3px 3px 0px 0px var(--mantine-color-black, #000);
-  background-color: var(--mantine-color-white, #fff);
-  color: var(--mantine-color-black, #000);
+  border: 1px solid var(--mantine-color-bright);
+  box-shadow: 3px 3px 0px 0px var(--mantine-color-bright);
+  background-color: var(--mantine-color-body);
+  color: var(--mantine-color-bright);
   outline: none;
   transition: all 0.05s steps(2);
 }
 
 .searchInput:focus {
-  border-color: var(--mantine-color-black, #000);
-  box-shadow: 4px 4px 0px 0px #0ff; /* Neon cyan offset drop shadow on focus! */
+  border-color: var(--mantine-color-bright);
+  box-shadow: 4px 4px 0px 0px var(--mantine-color-cyan-filled); /* Neon cyan offset drop shadow on focus! */
   transform: translate(-1px, -1px);
 }
 
 [data-mantine-color-scheme="dark"] .searchInput {
-  background-color: var(--mantine-color-dark-9, #0b0c0d);
-  color: var(--mantine-color-white, #fff);
-  border-color: var(--mantine-color-white, #fff);
-  box-shadow: 3px 3px 0px 0px var(--mantine-color-white, #fff);
+  background-color: var(--mantine-color-dark-9);
+  color: var(--mantine-color-body);
+  border-color: var(--mantine-color-body);
+  box-shadow: 3px 3px 0px 0px var(--mantine-color-body);
 }
 
 [data-mantine-color-scheme="dark"] .searchInput:focus {
-  border-color: var(--mantine-color-white, #fff);
-  box-shadow: 4px 4px 0px 0px #ff007f; /* Neon pink shadow on focus in dark mode */
+  border-color: var(--mantine-color-body);
+  box-shadow: 4px 4px 0px 0px var(--mantine-color-pink-filled); /* Neon pink shadow on focus in dark mode */
 }
 
 /* Scroll area and lists */
 .scrollArea {
-  border: 1px solid var(--mantine-color-black, #000);
-  background-color: var(--mantine-color-gray-0, #f8f9fa);
+  border: 1px solid var(--mantine-color-bright);
+  background-color: var(--mantine-color-dimmed);
   padding: 8px;
   max-height: 250px;
   overflow-y: auto;
 }
 
 [data-mantine-color-scheme="dark"] .scrollArea {
-  border-color: var(--mantine-color-white, #fff);
-  background-color: var(--mantine-color-dark-8, #141517);
+  border-color: var(--mantine-color-body);
+  background-color: var(--mantine-color-dark-8);
 }
 
 .list {
@@ -78,10 +78,10 @@
 }
 
 .listItem {
-  border: 1px solid var(--mantine-color-black, #000);
-  box-shadow: 2px 2px 0px 0px var(--mantine-color-black, #000);
-  background-color: var(--mantine-color-white, #fff);
-  color: var(--mantine-color-black, #000);
+  border: 1px solid var(--mantine-color-bright);
+  box-shadow: 2px 2px 0px 0px var(--mantine-color-bright);
+  background-color: var(--mantine-color-body);
+  color: var(--mantine-color-bright);
   padding: 10px 12px;
   font-size: 0.95rem;
   font-weight: bold;
@@ -94,42 +94,44 @@
 
 .listItem:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 4px 4px 0px 0px var(--mantine-color-black, #000);
-  background-color: var(--mantine-color-gray-1, #f1f3f5);
+  box-shadow: 4px 4px 0px 0px var(--mantine-color-bright);
+  background-color: var(--mantine-color-default-hover);
 }
 
 .listItem:active {
   transform: translate(1px, 1px);
-  box-shadow: 1px 1px 0px 0px var(--mantine-color-black, #000);
+  box-shadow: 1px 1px 0px 0px var(--mantine-color-bright);
 }
 
 [data-mantine-color-scheme="dark"] .listItem {
-  background-color: var(--mantine-color-dark-6, #2c2e33);
-  color: var(--mantine-color-white, #fff);
-  border-color: var(--mantine-color-white, #fff);
-  box-shadow: 2px 2px 0px 0px var(--mantine-color-white, #fff);
+  background-color: var(--mantine-color-dark-6);
+  color: var(--mantine-color-body);
+  border-color: var(--mantine-color-body);
+  box-shadow: 2px 2px 0px 0px var(--mantine-color-body);
 }
 
 [data-mantine-color-scheme="dark"] .listItem:hover {
-  box-shadow: 4px 4px 0px 0px var(--mantine-color-white, #fff);
-  background-color: var(--mantine-color-dark-5, #25262b);
+  box-shadow: 4px 4px 0px 0px var(--mantine-color-body);
+  background-color: var(--mantine-color-dark-5);
 }
 
 [data-mantine-color-scheme="dark"] .listItem:active {
-  box-shadow: 1px 1px 0px 0px var(--mantine-color-white, #fff);
+  box-shadow: 1px 1px 0px 0px var(--mantine-color-body);
 }
 
 /* High contrast match highlight */
 .highlight {
-  background-color: #ff0; /* Neon yellow */
-  color: #000;
-  border: 1px solid var(--mantine-color-black, #000);
+  background-color: var(--mantine-color-yellow-filled); /* Neon yellow */
+  color: var(--mantine-color-bright);
+  border: 1px solid var(--mantine-color-bright);
   padding: 0 2px;
   margin: 0 -1px;
 }
 
 [data-mantine-color-scheme="dark"] .highlight {
-  background-color: #39ff14; /* Neon green in dark mode */
+  background-color: var(
+    --mantine-color-green-filled
+  ); /* Neon green in dark mode */
 }
 
 /* Gritty Jitter animation on hover or selection */
@@ -149,29 +151,33 @@
 
 /* Avoid !important by nesting within list for stronger specificity */
 .list .listItem.selectedItem {
-  border-color: var(--mantine-color-black, #000);
-  background-color: #39ff14; /* Neon green on selection */
-  color: #000;
+  border-color: var(--mantine-color-bright);
+  background-color: var(
+    --mantine-color-green-filled
+  ); /* Neon green on selection */
+  color: var(--mantine-color-bright);
   animation: shake-item 0.1s steps(2) 2;
 }
 
 [data-mantine-color-scheme="dark"] .list .listItem.selectedItem {
-  border-color: var(--mantine-color-white, #fff);
-  background-color: #ff0; /* Neon yellow in dark mode */
-  color: #000;
+  border-color: var(--mantine-color-body);
+  background-color: var(
+    --mantine-color-yellow-filled
+  ); /* Neon yellow in dark mode */
+  color: var(--mantine-color-bright);
 }
 
 .badge {
-  background-color: #000;
-  color: #0ff; /* Neon cyan */
+  background-color: var(--mantine-color-bright);
+  color: var(--mantine-color-cyan-filled); /* Neon cyan */
   font-size: 0.75rem;
   padding: 2px 6px;
-  border: 1px solid var(--mantine-color-black, #000);
+  border: 1px solid var(--mantine-color-bright);
   text-transform: uppercase;
 }
 
 [data-mantine-color-scheme="dark"] .badge {
-  background-color: var(--mantine-color-white, #fff);
-  color: #ff007f; /* Neon pink */
-  border-color: var(--mantine-color-white, #fff);
+  background-color: var(--mantine-color-body);
+  color: var(--mantine-color-pink-filled); /* Neon pink */
+  border-color: var(--mantine-color-body);
 }

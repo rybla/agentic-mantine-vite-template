@@ -47,7 +47,7 @@ export function IndexPage() {
               {"STATUS: "}
               <span
                 className={classes["accentSpan"]}
-                style={{ color: "#39ff14" }}
+                style={{ color: "var(--mantine-color-green-filled)" }}
               >
                 {"ONLINE"}
               </span>{" "}
@@ -68,7 +68,9 @@ export function IndexPage() {
           <div className={classes["card"]}>
             <div className={classes["cardHeader"]}>
               <span>WHEEL SAMPLER MODULE</span>
-              <span style={{ color: "#39ff14" }}>● LIVE</span>
+              <span style={{ color: "var(--mantine-color-green-filled)" }}>
+                ● LIVE
+              </span>
             </div>
             <div className={classes["cardBody"]}>
               <RandomSamplerWheel
@@ -94,7 +96,9 @@ export function IndexPage() {
           <div className={classes["card"]}>
             <div className={classes["cardHeader"]}>
               <span>REAL-TIME SYSTEM MESSAGES</span>
-              <span style={{ color: "#00ffff" }}>LOGS</span>
+              <span style={{ color: "var(--mantine-color-cyan-filled)" }}>
+                LOGS
+              </span>
             </div>
             <div className={classes["cardBody"]}>
               <div className={classes["consoleLog"]}>
@@ -131,7 +135,9 @@ export function IndexPage() {
           <div className={classes["card"]}>
             <div className={classes["cardHeader"]}>
               <span>BUFFER LOADING SIMULATOR</span>
-              <span style={{ color: "#ff007f" }}>AUTO</span>
+              <span style={{ color: "var(--mantine-color-pink-filled)" }}>
+                AUTO
+              </span>
             </div>
             <div className={classes["cardBody"]}>
               <LoadingBar
@@ -147,7 +153,9 @@ export function IndexPage() {
           <div className={classes["card"]}>
             <div className={classes["cardHeader"]}>
               <span>NETWORK SYSTEM DIRECTORY</span>
-              <span style={{ color: "#ffff00" }}>INDEX</span>
+              <span style={{ color: "var(--mantine-color-yellow-filled)" }}>
+                INDEX
+              </span>
             </div>
             <div className={classes["cardBody"]}>
               <FilterableList

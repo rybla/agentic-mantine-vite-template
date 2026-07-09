@@ -24,7 +24,7 @@ export function LoadingBar({
   value,
   label = "LOADING SYSTEM DATA...",
   variant = "striped",
-  color = "#39ff14", // High-contrast neon green
+  color = "var(--mantine-color-green-filled)", // High-contrast neon green
   speed = 100,
   onComplete,
   autoSimulate = false,
@@ -81,8 +81,8 @@ export function LoadingBar({
 
   // High contrast background gradient for stripes:
   const backgroundStyle = {
-    backgroundColor: "#000000",
-    backgroundImage: `repeating-conic-gradient(from 0deg at center, ${color}, ${color} 10deg, #000000 30deg, #000000 30deg)`,
+    backgroundColor: "var(--mantine-color-bright)",
+    backgroundImage: `repeating-conic-gradient(from 0deg at center, ${color}, ${color} 10deg, var(--mantine-color-bright) 30deg)`,
     width: `${progress}%`,
   };
 

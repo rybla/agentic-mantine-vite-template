@@ -86,7 +86,9 @@ export function AboutPage() {
         <div className={classes["card"]}>
           <div className={classes["cardHeader"]}>
             <span>ARCHITECTURE SPECIFICATIONS</span>
-            <span style={{ color: "#00ffff" }}>SYSTEM_INFO</span>
+            <span style={{ color: "var(--mantine-color-cyan-filled)" }}>
+              SYSTEM_INFO
+            </span>
           </div>
           <div className={classes["cardBody"]}>
             <div className={classes["specRow"]}>
@@ -124,7 +126,9 @@ export function AboutPage() {
         <div className={classes["card"]}>
           <div className={classes["cardHeader"]}>
             <span>VISUAL DESIGN ARCHITECTURE</span>
-            <span style={{ color: "#39ff14" }}>RULES</span>
+            <span style={{ color: "var(--mantine-color-green-filled)" }}>
+              RULES
+            </span>
           </div>
           <div className={classes["cardBody"]}>
             <div className={classes["guideList"]}>
@@ -194,7 +198,9 @@ export function AboutPage() {
       <div className={classes["card"]}>
         <div className={classes["cardHeader"]}>
           <span>STATEFUL HARDWARE TESTING LAB</span>
-          <span style={{ color: "#ffff00" }}>DIAG_v1</span>
+          <span style={{ color: "var(--mantine-color-yellow-filled)" }}>
+            DIAG_v1
+          </span>
         </div>
         <div className={classes["cardBody"]}>
           <div className={classes["consoleLog"]}>

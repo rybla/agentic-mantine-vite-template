@@ -1,7 +1,7 @@
 .container {
-  border: 1px solid var(--mantine-color-black, #000);
-  box-shadow: 4px 4px 0px 0px var(--mantine-color-black, #000);
-  background-color: var(--mantine-color-white, #fff);
+  border: 1px solid var(--mantine-color-bright);
+  box-shadow: 4px 4px 0px 0px var(--mantine-color-bright);
+  background-color: var(--mantine-color-body);
   padding: 16px;
   font-family: var(--mantine-font-family-monospace, monospace);
   position: relative;
@@ -10,9 +10,9 @@
 
 /* Dark mode adjustment if needed, but neo-brutalist uses black borders */
 [data-mantine-color-scheme="dark"] .container {
-  background-color: var(--mantine-color-dark-7, #1a1b1e);
-  border-color: var(--mantine-color-white, #fff);
-  box-shadow: 4px 4px 0px 0px var(--mantine-color-white, #fff);
+  background-color: var(--mantine-color-dark-7);
+  border-color: var(--mantine-color-body);
+  box-shadow: 4px 4px 0px 0px var(--mantine-color-body);
 }
 
 @keyframes jitter {
@@ -43,8 +43,8 @@
 
 .track {
   height: 28px;
-  border: 1px solid var(--mantine-color-black, #000);
-  background-color: var(--mantine-color-gray-1, #f1f3f5);
+  border: 1px solid var(--mantine-color-bright);
+  background-color: var(--mantine-color-default-hover);
   position: relative;
   overflow: hidden;
   display: flex;
@@ -53,8 +53,8 @@
 }
 
 [data-mantine-color-scheme="dark"] .track {
-  border-color: var(--mantine-color-white, #fff);
-  background-color: var(--mantine-color-dark-9, #0b0c0d);
+  border-color: var(--mantine-color-body);
+  background-color: var(--mantine-color-dark-9);
 }
 
 .fill {
@@ -94,27 +94,27 @@
 }
 
 .statusText {
-  color: var(--mantine-color-black, #000);
+  color: var(--mantine-color-bright);
 }
 
 [data-mantine-color-scheme="dark"] .statusText {
-  color: var(--mantine-color-white, #fff);
+  color: var(--mantine-color-body);
 }
 
 .percentBadge {
-  background-color: var(--mantine-color-black, #000);
-  color: #39ff14; /* High contrast neon green */
+  background-color: var(--mantine-color-bright);
+  color: var(--mantine-color-green-filled); /* High contrast neon green */
   padding: 2px 8px;
-  border: 1px solid var(--mantine-color-black, #000);
-  box-shadow: 2px 2px 0px 0px #000;
+  border: 1px solid var(--mantine-color-bright);
+  box-shadow: 2px 2px 0px 0px var(--mantine-color-bright);
   font-weight: bold;
 }
 
 [data-mantine-color-scheme="dark"] .percentBadge {
-  background-color: var(--mantine-color-white, #fff);
-  color: #ff007f; /* High contrast neon pink */
-  border-color: var(--mantine-color-white, #fff);
-  box-shadow: 2px 2px 0px 0px var(--mantine-color-white, #fff);
+  background-color: var(--mantine-color-body);
+  color: var(--mantine-color-pink-filled); /* High contrast neon pink */
+  border-color: var(--mantine-color-body);
+  box-shadow: 2px 2px 0px 0px var(--mantine-color-body);
 }
 
 /* Segmented Blocks View */
@@ -128,23 +128,25 @@
 .segment {
   flex: 1;
   height: 100%;
-  border: 1px solid var(--mantine-color-black, #000);
+  border: 1px solid var(--mantine-color-bright);
   background-color: transparent;
 }
 
 [data-mantine-color-scheme="dark"] .segment {
-  border-color: var(--mantine-color-dark-4, #5c5f66);
+  border-color: var(--mantine-color-dark-4);
 }
 
 .segmentActive {
-  background-color: #0ff; /* High contrast cyan */
-  border-color: var(--mantine-color-black, #000);
+  background-color: var(--mantine-color-cyan-filled); /* High contrast cyan */
+  border-color: var(--mantine-color-bright);
   animation: segment-pulse 0.4s steps(2) infinite alternate;
 }
 
 [data-mantine-color-scheme="dark"] .segmentActive {
-  background-color: #ff0; /* High contrast neon yellow */
-  border-color: var(--mantine-color-white, #fff);
+  background-color: var(
+    --mantine-color-yellow-filled
+  ); /* High contrast neon yellow */
+  border-color: var(--mantine-color-body);
 }
 
 @keyframes segment-pulse {
@@ -160,10 +162,10 @@
 /* Control buttons style */
 .button {
   margin-top: 12px;
-  border: 1px solid var(--mantine-color-black, #000);
-  box-shadow: 2px 2px 0px 0px var(--mantine-color-black, #000);
-  background-color: var(--mantine-color-white, #fff);
-  color: var(--mantine-color-black, #000);
+  border: 1px solid var(--mantine-color-bright);
+  box-shadow: 2px 2px 0px 0px var(--mantine-color-bright);
+  background-color: var(--mantine-color-body);
+  color: var(--mantine-color-bright);
   font-family: var(--mantine-font-family-monospace, monospace);
   font-weight: bold;
   cursor: pointer;
@@ -174,16 +176,16 @@
 
 .button:active {
   transform: translate(1px, 1px);
-  box-shadow: 1px 1px 0px 0px var(--mantine-color-black, #000);
+  box-shadow: 1px 1px 0px 0px var(--mantine-color-bright);
 }
 
 [data-mantine-color-scheme="dark"] .button {
-  background-color: var(--mantine-color-dark-6, #2c2e33);
-  color: var(--mantine-color-white, #fff);
-  border-color: var(--mantine-color-white, #fff);
-  box-shadow: 2px 2px 0px 0px var(--mantine-color-white, #fff);
+  background-color: var(--mantine-color-dark-6);
+  color: var(--mantine-color-body);
+  border-color: var(--mantine-color-body);
+  box-shadow: 2px 2px 0px 0px var(--mantine-color-body);
 }
 
 [data-mantine-color-scheme="dark"] .button:active {
-  box-shadow: 1px 1px 0px 0px var(--mantine-color-white, #fff);
+  box-shadow: 1px 1px 0px 0px var(--mantine-color-body);
 }
