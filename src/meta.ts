@@ -24,31 +24,6 @@ export const pages = Object.entries(
 export type PageName = z.infer<typeof PageName>;
 export const PageName = z.enum(Array.from(Object.keys(pages)));
 
-// export const pageImports = Object.entries(
-//   import.meta.glob("./pages/**/*.page.tsx")
-// ).reduce(
-//   (o, [filepath, import_]) => {
-//     const route = fromFilepathToRoute(filepath);
-//     if (route === undefined) {
-//       throw new Error(`Invalid page filepath: ${filepath}`);
-//     }
-//     o[route] = import_;
-//     return o;
-//   },
-//   {} as { [route: string]: () => Promise<unknown> }
-// );
-
-// // import.meta.glob automatically creates lazy-loading import functions
-// // for all files matching the pattern, triggering automatic code-splitting.
-// export const pageRoutes = Object.keys(pageImports).flatMap((filepath) => {
-//   const route = fromFilepathToRoute(filepath);
-//   if (route === undefined) {
-//     return [];
-//   }
-
-//   return route;
-// });
-
 export function fromRouteToFilepath(route: string): string {
   if (route === "/") {
     route = "/index";
