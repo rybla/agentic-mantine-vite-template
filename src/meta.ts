@@ -59,13 +59,14 @@ export function fromRouteToFilepath(route: string): string {
 
 export function fromFilepathToRoute(filepath: string): string {
   const name = fromFilepathToName(filepath);
-  const route = name === "/index" ? "/" : `/${name}`;
+  const route = name === "index" ? "/" : `/${name}`;
   return route;
 }
 
 export function fromFilepathToName(filepath: string): string {
-  // (?:.\/)?(?:src\/)?
-  const name = filepath;
+  const name = filepath.match(
+    /(?:\.\/)?(?:src\/)?pages\/(.*)\.page\.tsx$/
+  )?.[1];
   if (name === undefined) {
     throw new Error(`Invalid page filepath: ${filepath}`);
   }

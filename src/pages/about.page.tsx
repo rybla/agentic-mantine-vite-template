@@ -72,7 +72,7 @@ export function AboutPage() {
 
   return (
     <div className={classes["page"]}>
-      <Header />
+      <Header name="about" />
 
       {/* SYSTEM HERO */}
       <section className={classes["hero"]}>

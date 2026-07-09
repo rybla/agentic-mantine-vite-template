@@ -62,13 +62,14 @@ function makePageHtml(page) {
 
 const page_names = [];
 for await (const page_filepath of fs.glob("src/pages/**/*.page.tsx")) {
-  const page_name = page_filepath.match(/\.\/pages\/(.*)\.page\.tsx$/)?.[1];
+  const page_name = page_filepath.match(
+    /(?:\.\/)?(?:src\/)?pages\/(.*)\.page\.tsx$/
+  )?.[1];
   if (page_name === undefined) {
     throw new Error(`Invalid page filepath: ${page_filepath}`);
   }
 
   page_names.push(page_name);
-  const name = filepath.match(/\.\/pages\/(.*)\.page\.tsx$/)?.[1];
 }
 
 console.log(JSON.stringify(page_names, null, 4));

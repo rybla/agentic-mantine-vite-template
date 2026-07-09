@@ -32,7 +32,7 @@ export function IndexPage() {
 
   return (
     <div className={classes["page"]}>
-      <Header />
+      <Header name="index" />
 
       {/* SYSTEM HERO */}
       <section className={classes["hero"]}>
