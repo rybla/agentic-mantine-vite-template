@@ -73,6 +73,7 @@ export function LoadingBar({
 
   // Determine if it should jitter (for a gritty look at high completion rates or during load)
   const isJittering = progress > 0 && progress < 100;
+  const isCompleted = progress === 100;
 
   // For segmented variant, let's render 12 blocks
   const totalSegments = 12;
@@ -91,7 +92,7 @@ export function LoadingBar({
     }
   };
 
-  const containerClasses = `${classes["container"]} ${isJittering ? classes["jittering"] : ""}`;
+  const containerClasses = `${classes["container"]} ${isJittering ? classes["jittering"] : ""} ${isCompleted ? classes["completed"] : ""}`;
 
   return (
     <Box className={containerClasses} data-testid="loading-bar">
@@ -113,6 +114,7 @@ export function LoadingBar({
                 <Box
                   key={i}
                   className={segmentClass}
+                  style={{ "--index": i }}
                   data-testid={`segment-${i}`}
                 />
               );
