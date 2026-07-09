@@ -37,7 +37,6 @@ Expected string to end with suffix
 }
 
 function makePageHtml(page) {
-  console.log(`makePageHtml(${page})`);
   return (
     `
   <!doctype html>
@@ -71,8 +70,6 @@ for await (const page_filepath of fs.glob("src/pages/**/*.page.tsx")) {
 
   page_names.push(page_name);
 }
-
-console.log(JSON.stringify(page_names, null, 4));
 
 function resolveId(url) {
   if (!url) return null;
@@ -134,7 +131,6 @@ function virtualPageHtml() {
         server.middlewares.use(async (req, res, next) => {
           const page = resolveId(req.url);
           if (page === null) return next();
-          console.log(`configureServer middleware use: page = ${page}`);
 
           try {
             const rawHtml = makePageHtml(page);

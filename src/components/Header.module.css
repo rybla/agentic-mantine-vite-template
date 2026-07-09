@@ -70,12 +70,7 @@
   box-shadow: 3px 3px 0px 0px var(--mantine-color-white, #fff);
 }
 
-.activeNavLinkHome {
-  background-color: #39ff14; /* Neon green */
-  color: #000;
-}
-
-.activeNavLinkAbout {
+.activeNavLink {
   background-color: #ff007f; /* Neon pink */
   color: #000;
 }

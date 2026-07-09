@@ -24,9 +24,8 @@ function PageLink(props: { source: PageName; target: PageName }) {
   PageName.parse(props.target);
 
   return (
-    <Link to={pages[props.target]!.route} className={classes["navLink"]}>
+    <Link to={pages[props.target]!.route} className={`${classes["navLink"]} ${props.source === props.target ? classes["activeNavLink"] : ""}`}>
       [ {props.target} ]
     </Link>
   );
 }
-// ${classes["activeNavLinkAbout"]}
