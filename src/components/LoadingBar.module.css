@@ -89,7 +89,7 @@
 
 .percentBadge {
   background-color: var(--mantine-color-green-filled);
-  color: var(--mantine-color-green-text);
+  color: var(--mantine-color-dark-text);
   padding: 2px 8px;
   border: 1px solid var(--mantine-color-bright);
   box-shadow: 2px 2px 0px 0px var(--mantine-color-bright);

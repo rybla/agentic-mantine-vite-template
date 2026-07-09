@@ -1,7 +1,7 @@
 .footer {
   border: 1px solid var(--mantine-color-bright);
   box-shadow: 2px 2px 0px 0px var(--mantine-color-bright);
-  background-color: var(--mantine-color-gray-filled);
+  background-color: var(--mantine-color-dark-filled);
   color: var(--mantine-color-gray-text);
   padding: 12px 24px;
   display: flex;
