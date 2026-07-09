@@ -1,0 +1,81 @@
+.header {
+  border: 1px solid var(--mantine-color-black, #000);
+  box-shadow: 4px 4px 0px 0px var(--mantine-color-black, #000);
+  background-color: var(--mantine-color-white, #fff);
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+[data-mantine-color-scheme="dark"] .header {
+  border-color: var(--mantine-color-white, #fff);
+  box-shadow: 4px 4px 0px 0px var(--mantine-color-white, #fff);
+  background-color: var(--mantine-color-dark-7, #1a1b1e);
+}
+
+.brand {
+  font-weight: 900;
+  font-size: 1.25rem;
+  letter-spacing: 2px;
+  color: #ff007f; /* Neon pink */
+  animation: crt-flicker 3s steps(2) infinite;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+[data-mantine-color-scheme="dark"] .brand {
+  color: #39ff14; /* Neon green */
+}
+
+.brand:hover {
+  animation: jitter 0.08s steps(2) infinite;
+}
+
+.nav {
+  display: flex;
+  gap: 12px;
+}
+
+.navLink {
+  border: 1px solid var(--mantine-color-black, #000);
+  box-shadow: 2px 2px 0px 0px var(--mantine-color-black, #000);
+  background-color: var(--mantine-color-white, #fff);
+  color: var(--mantine-color-black, #000);
+  text-decoration: none;
+  padding: 6px 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  transition: all 0.05s steps(2);
+}
+
+[data-mantine-color-scheme="dark"] .navLink {
+  border-color: var(--mantine-color-white, #fff);
+  box-shadow: 2px 2px 0px 0px var(--mantine-color-white, #fff);
+  background-color: var(--mantine-color-dark-6, #2c2e33);
+  color: var(--mantine-color-white, #fff);
+}
+
+.navLink:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px 0px var(--mantine-color-black, #000);
+}
+
+[data-mantine-color-scheme="dark"] .navLink:hover {
+  box-shadow: 3px 3px 0px 0px var(--mantine-color-white, #fff);
+}
+
+.activeNavLinkHome {
+  background-color: #39ff14; /* Neon green */
+  color: #000;
+}
+
+.activeNavLinkAbout {
+  background-color: #ff007f; /* Neon pink */
+  color: #000;
+}

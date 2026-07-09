@@ -2,7 +2,6 @@ import react from "@vitejs/plugin-react";
 import fs from "fs/promises";
 import path from "path";
 import { defineConfig } from "vite";
-import tsconfigPaths from "vite-tsconfig-paths";
 import packageConfig from "./package.json";
 
 function stripPrefix(prefix, s) {
@@ -61,12 +60,18 @@ function makePageHtml(page) {
   );
 }
 
-const pages = [];
-for await (const page of fs.glob("src/pages/**/*.page.tsx")) {
-  pages.push(stripPrefix("src/pages/", stripSuffix(".page.tsx", page)));
+const page_names = [];
+for await (const page_filepath of fs.glob("src/pages/**/*.page.tsx")) {
+  const page_name = page_filepath.match(/\.\/pages\/(.*)\.page\.tsx$/)?.[1];
+  if (page_name === undefined) {
+    throw new Error(`Invalid page filepath: ${page_filepath}`);
+  }
+
+  page_names.push(page_name);
+  const name = filepath.match(/\.\/pages\/(.*)\.page\.tsx$/)?.[1];
 }
 
-console.log(JSON.stringify(pages, null, 4));
+console.log(JSON.stringify(page_names, null, 4));
 
 function resolveId(url) {
   if (!url) return null;
@@ -91,7 +96,7 @@ function resolveId(url) {
     relativePath = relativePath.slice(0, -5);
   }
 
-  if (pages.includes(relativePath)) {
+  if (page_names.includes(relativePath)) {
     return relativePath;
   }
 
@@ -107,14 +112,14 @@ function virtualPageHtml() {
     },
     async buildStart() {
       if (isBuild) {
-        for (const page of pages) {
+        for (const page of page_names) {
           await fs.writeFile(`${page}.html`, makePageHtml(page));
         }
       }
     },
     async buildEnd() {
       if (isBuild) {
-        for (const page of pages) {
+        for (const page of page_names) {
           try {
             await fs.unlink(`${page}.html`);
           } catch (e) {
@@ -150,7 +155,7 @@ function virtualPageHtml() {
 }
 
 export default defineConfig({
-  plugins: [react(), virtualPageHtml(), tsconfigPaths()],
+  plugins: [react(), virtualPageHtml()],
 
   base: `/${packageConfig.name}/`,
 
@@ -164,7 +169,7 @@ export default defineConfig({
     outDir: path.join("dist"),
     emptyOutDir: true,
     rolldownOptions: {
-      input: pages.reduce((acc, page) => {
+      input: page_names.reduce((acc, page) => {
         acc[page] = `${page}.html`;
         return acc;
       }, {}),

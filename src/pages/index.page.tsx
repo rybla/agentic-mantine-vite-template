@@ -1,10 +1,10 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { useMantineColorScheme } from "@mantine/core";
-import classes from "@/pages/index.module.css";
 import { FilterableList } from "@/components/FilterableList";
+import { Header } from "@/components/Header";
 import { LoadingBar } from "@/components/LoadingBar";
 import { RandomSamplerWheel } from "@/components/RandomSamplerWheel";
+import classes from "@/pages/index.module.css";
+import { useMantineColorScheme } from "@mantine/core";
+import { useState } from "react";
 
 export function IndexPage() {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
@@ -32,23 +32,7 @@ export function IndexPage() {
 
   return (
     <div className={classes["page"]}>
-      {/* HEADER NAVIGATION */}
-      <header className={classes["header"]}>
-        <div className={classes["brand"]}>
-          <span>⚡ CORE_SYS_OS</span>
-        </div>
-        <nav className={classes["nav"]}>
-          <Link
-            to="/"
-            className={`${classes["navLink"]} ${classes["activeNavLinkHome"]}`}
-          >
-            [ HOME_PAGE ]
-          </Link>
-          <Link to="/about" className={classes["navLink"]}>
-            [ ABOUT_SYS ]
-          </Link>
-        </nav>
-      </header>
+      <Header />
 
       {/* SYSTEM HERO */}
       <section className={classes["hero"]}>

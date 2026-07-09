@@ -1,7 +1,7 @@
-import { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
-import { useMantineColorScheme } from "@mantine/core";
+import { Header } from "@/components/Header";
 import classes from "@/pages/about.module.css";
+import { useMantineColorScheme } from "@mantine/core";
+import { useEffect, useRef, useState } from "react";
 
 interface LogLine {
   id: number;
@@ -72,23 +72,7 @@ export function AboutPage() {
 
   return (
     <div className={classes["page"]}>
-      {/* HEADER NAVIGATION */}
-      <header className={classes["header"]}>
-        <div className={classes["brand"]}>
-          <span>⚡ CORE_SYS_OS</span>
-        </div>
-        <nav className={classes["nav"]}>
-          <Link to="/" className={classes["navLink"]}>
-            [ HOME_PAGE ]
-          </Link>
-          <Link
-            to="/about"
-            className={`${classes["navLink"]} ${classes["activeNavLinkAbout"]}`}
-          >
-            [ ABOUT_SYS ]
-          </Link>
-        </nav>
-      </header>
+      <Header />
 
       {/* SYSTEM HERO */}
       <section className={classes["hero"]}>
