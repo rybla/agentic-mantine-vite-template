@@ -10,12 +10,6 @@
   gap: 12px;
 }
 
-[data-mantine-color-scheme="dark"] .hero {
-  border-color: var(--mantine-color-body);
-  box-shadow: 5px 5px 0px 0px var(--mantine-color-body);
-  background-color: var(--mantine-color-dark-7);
-}
-
 .title {
   font-size: 2.25rem;
   font-weight: 900;
@@ -26,17 +20,9 @@
   color: var(--mantine-color-bright);
 }
 
-[data-mantine-color-scheme="dark"] .title {
-  color: var(--mantine-color-body);
-}
-
 .heroSubtitle {
   font-size: 0.95rem;
   font-weight: bold;
   text-transform: uppercase;
-  color: var(--mantine-color-dark-text);
-}
-
-[data-mantine-color-scheme="dark"] .heroSubtitle {
-  color: var(--mantine-color-dark-3);
+  color: var(--mantine-color-gray-text);
 }

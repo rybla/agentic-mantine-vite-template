@@ -10,12 +10,6 @@
   gap: 16px;
 }
 
-[data-mantine-color-scheme="dark"] .header {
-  border-color: var(--mantine-color-body);
-  box-shadow: 4px 4px 0px 0px var(--mantine-color-body);
-  background-color: var(--mantine-color-dark-7);
-}
-
 .brand {
   font-weight: 900;
   font-size: 1.25rem;
@@ -26,10 +20,6 @@
   display: flex;
   align-items: center;
   gap: 8px;
-}
-
-[data-mantine-color-scheme="dark"] .brand {
-  color: var(--mantine-color-green-filled); /* Neon green */
 }
 
 .brand:hover {
@@ -54,20 +44,9 @@
   transition: all 0.05s steps(2);
 }
 
-[data-mantine-color-scheme="dark"] .navLink {
-  border-color: var(--mantine-color-body);
-  box-shadow: 2px 2px 0px 0px var(--mantine-color-body);
-  background-color: var(--mantine-color-dark-6);
-  color: var(--mantine-color-body);
-}
-
 .navLink:hover {
   transform: translate(-1px, -1px);
   box-shadow: 3px 3px 0px 0px var(--mantine-color-bright);
-}
-
-[data-mantine-color-scheme="dark"] .navLink:hover {
-  box-shadow: 3px 3px 0px 0px var(--mantine-color-body);
 }
 
 .activeNavLink {

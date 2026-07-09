@@ -11,12 +11,6 @@
   position: relative;
 }
 
-[data-mantine-color-scheme="dark"] .container {
-  background-color: var(--mantine-color-dark-7);
-  border-color: var(--mantine-color-body);
-  box-shadow: 6px 6px 0px 0px var(--mantine-color-body);
-}
-
 .wheelWrapper {
   position: relative;
   width: 300px;
@@ -33,12 +27,6 @@
   border: 1px solid var(--mantine-color-bright);
   box-shadow: 4px 4px 0px 0px var(--mantine-color-bright);
   background-color: var(--mantine-color-default-hover);
-}
-
-[data-mantine-color-scheme="dark"] .svgWheel {
-  border-color: var(--mantine-color-body);
-  box-shadow: 4px 4px 0px 0px var(--mantine-color-body);
-  background-color: var(--mantine-color-dark-8);
 }
 
 /* Needle overlay */
@@ -88,13 +76,6 @@
   transition: transform 0.15s steps(3);
 }
 
-[data-mantine-color-scheme="dark"] .resultBox {
-  background-color: var(--mantine-color-pink-filled); /* Neon pink in dark mode */
-  color: var(--mantine-color-body);
-  border-color: var(--mantine-color-body);
-  box-shadow: 4px 4px 0px 0px var(--mantine-color-body);
-}
-
 @keyframes flash {
   0%,
   100% {
@@ -106,10 +87,6 @@
     background-color: var(--mantine-color-bright);
     color: var(--mantine-color-yellow-filled);
   }
-}
-
-[data-mantine-color-scheme="dark"] .resultWinner {
-  animation: flash-dark 0.2s steps(2) 3;
 }
 
 .resultWinner {
@@ -162,21 +139,4 @@
   cursor: not-allowed;
   transform: none;
   box-shadow: 2px 2px 0px 0px var(--mantine-color-bright);
-}
-
-[data-mantine-color-scheme="dark"] .spinBtn {
-  border-color: var(--mantine-color-body);
-  box-shadow: 4px 4px 0px 0px var(--mantine-color-body);
-  background-color: var(--mantine-color-cyan-filled);
-}
-
-[data-mantine-color-scheme="dark"] .spinBtn:active:not(:disabled) {
-  box-shadow: 2px 2px 0px 0px var(--mantine-color-body);
-}
-
-[data-mantine-color-scheme="dark"] .spinBtn:disabled {
-  background-color: var(--mantine-color-dark-5);
-  color: var(--mantine-color-dark-3);
-  border-color: var(--mantine-color-dark-4);
-  box-shadow: 2px 2px 0px 0px var(--mantine-color-dark-4);
 }

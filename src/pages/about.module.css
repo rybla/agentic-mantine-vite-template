@@ -11,11 +11,6 @@
   min-height: 100vh;
 }
 
-[data-mantine-color-scheme="dark"] .page {
-  color: var(--mantine-color-body);
-  background-color: var(--mantine-color-dark-8);
-}
-
 /* Specs layout */
 .layoutGrid {
   display: grid;
@@ -38,12 +33,6 @@
   flex-direction: column;
 }
 
-[data-mantine-color-scheme="dark"] .card {
-  border-color: var(--mantine-color-body);
-  box-shadow: 4px 4px 0px 0px var(--mantine-color-body);
-  background-color: var(--mantine-color-dark-7);
-}
-
 .cardHeader {
   border-bottom: 1px solid var(--mantine-color-bright);
   background-color: var(--mantine-color-bright);
@@ -55,12 +44,6 @@
   font-size: 0.85rem;
   display: flex;
   justify-content: space-between;
-}
-
-[data-mantine-color-scheme="dark"] .cardHeader {
-  border-bottom-color: var(--mantine-color-body);
-  background-color: var(--mantine-color-body);
-  color: var(--mantine-color-pink-filled); /* Neon pink */
 }
 
 .cardBody {
@@ -78,27 +61,15 @@
   font-size: 0.9rem;
 }
 
-[data-mantine-color-scheme="dark"] .specRow {
-  border-bottom-color: var(--mantine-color-dark-4);
-}
-
 .specName {
   font-weight: 900;
   text-transform: uppercase;
-  color: var(--mantine-color-dark-text);
-}
-
-[data-mantine-color-scheme="dark"] .specName {
-  color: var(--mantine-color-dark-2);
+  color: var(--mantine-color-gray-text);
 }
 
 .specValue {
   font-weight: bold;
   color: var(--mantine-color-pink-filled); /* Neon pink */
-}
-
-[data-mantine-color-scheme="dark"] .specValue {
-  color: var(--mantine-color-cyan-filled); /* Neon cyan */
 }
 
 /* Bullet list for guidelines */
@@ -132,23 +103,12 @@
   font-weight: bold;
 }
 
-[data-mantine-color-scheme="dark"] .guideBadge {
-  background-color: var(--mantine-color-body);
-  color: var(--mantine-color-pink-filled); /* Neon pink */
-  border-color: var(--mantine-color-body);
-}
-
 .guideText {
   font-size: 0.8rem;
-  color: var(--mantine-color-dark-text);
+  color: var(--mantine-color-gray-text);
   line-height: 1.4;
   padding-left: 12px;
   border-left: 1px solid var(--mantine-color-dark-outline);
-}
-
-[data-mantine-color-scheme="dark"] .guideText {
-  color: var(--mantine-color-dark-2);
-  border-left-color: var(--mantine-color-dark-4);
 }
 
 /* Interactive diagnostic panel */
@@ -163,11 +123,6 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
-}
-
-[data-mantine-color-scheme="dark"] .consoleLog {
-  border-color: var(--mantine-color-body);
-  background-color: var(--mantine-color-dark-9);
 }
 
 .consoleLine {
@@ -203,30 +158,15 @@
   letter-spacing: 1px;
 }
 
-[data-mantine-color-scheme="dark"] .accentButton {
-  border-color: var(--mantine-color-body);
-  box-shadow: 3px 3px 0px 0px var(--mantine-color-body);
-  background-color: var(--mantine-color-pink-filled); /* Neon pink */
-  color: var(--mantine-color-body);
-}
-
 .accentButton:hover {
   transform: translate(-1px, -1px);
   box-shadow: 4px 4px 0px 0px var(--mantine-color-bright);
   filter: brightness(1.1);
 }
 
-[data-mantine-color-scheme="dark"] .accentButton:hover {
-  box-shadow: 4px 4px 0px 0px var(--mantine-color-body);
-}
-
 .accentButton:active {
   transform: translate(2px, 2px);
   box-shadow: 1px 1px 0px 0px var(--mantine-color-bright);
-}
-
-[data-mantine-color-scheme="dark"] .accentButton:active {
-  box-shadow: 1px 1px 0px 0px var(--mantine-color-body);
 }
 
 .accentButton:disabled {
@@ -322,12 +262,6 @@
   align-items: center;
   font-size: 0.75rem;
   font-weight: bold;
-}
-
-[data-mantine-color-scheme="dark"] .footer {
-  border-color: var(--mantine-color-body);
-  box-shadow: 2px 2px 0px 0px var(--mantine-color-body);
-  background-color: var(--mantine-color-dark-7);
 }
 
 .colorToggle {

@@ -11,11 +11,6 @@
   min-height: 100vh;
 }
 
-[data-mantine-color-scheme="dark"] .page {
-  color: var(--mantine-color-body);
-  background-color: var(--mantine-color-dark-8);
-}
-
 .header {
   border: 1px solid var(--mantine-color-bright);
   box-shadow: 4px 4px 0px 0px var(--mantine-color-bright);
@@ -28,12 +23,6 @@
   gap: 16px;
 }
 
-[data-mantine-color-scheme="dark"] .header {
-  border-color: var(--mantine-color-body);
-  box-shadow: 4px 4px 0px 0px var(--mantine-color-body);
-  background-color: var(--mantine-color-dark-7);
-}
-
 .brand {
   font-weight: 900;
   font-size: 1.25rem;
@@ -44,10 +33,6 @@
   display: flex;
   align-items: center;
   gap: 8px;
-}
-
-[data-mantine-color-scheme="dark"] .brand {
-  color: var(--mantine-color-green-filled); /* Neon green */
 }
 
 .brand:hover {
@@ -72,20 +57,9 @@
   transition: all 0.05s steps(2);
 }
 
-[data-mantine-color-scheme="dark"] .navLink {
-  border-color: var(--mantine-color-body);
-  box-shadow: 2px 2px 0px 0px var(--mantine-color-body);
-  background-color: var(--mantine-color-dark-6);
-  color: var(--mantine-color-body);
-}
-
 .navLink:hover {
   transform: translate(-1px, -1px);
   box-shadow: 3px 3px 0px 0px var(--mantine-color-bright);
-}
-
-[data-mantine-color-scheme="dark"] .navLink:hover {
-  box-shadow: 3px 3px 0px 0px var(--mantine-color-body);
 }
 
 .activeNavLinkHome {
@@ -109,12 +83,6 @@
   gap: 12px;
   position: relative;
   overflow: hidden;
-}
-
-[data-mantine-color-scheme="dark"] .hero {
-  border-color: var(--mantine-color-body);
-  box-shadow: 5px 5px 0px 0px var(--mantine-color-body);
-  background-color: var(--mantine-color-dark-7);
 }
 
 /* Add a scanner visual line overlay in the hero section */
@@ -176,10 +144,6 @@
   color: var(--mantine-color-bright);
 }
 
-[data-mantine-color-scheme="dark"] .title {
-  color: var(--mantine-color-body);
-}
-
 .heroSubtitle {
   font-size: 0.95rem;
   font-weight: bold;
@@ -190,17 +154,9 @@
   flex-wrap: wrap;
 }
 
-[data-mantine-color-scheme="dark"] .heroSubtitle {
-  color: var(--mantine-color-dark-3);
-}
-
 .accentSpan {
   color: var(--mantine-color-cyan-filled); /* Neon cyan */
   font-weight: 900;
-}
-
-[data-mantine-color-scheme="dark"] .accentSpan {
-  color: var(--mantine-color-orange-filled); /* Neon orange */
 }
 
 /* Grid layout for columns */
@@ -228,12 +184,6 @@
   overflow: hidden;
 }
 
-[data-mantine-color-scheme="dark"] .card {
-  border-color: var(--mantine-color-body);
-  box-shadow: 4px 4px 0px 0px var(--mantine-color-body);
-  background-color: var(--mantine-color-dark-7);
-}
-
 .cardHeader {
   border-bottom: 1px solid var(--mantine-color-bright);
   background-color: var(--mantine-color-bright);
@@ -246,12 +196,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-[data-mantine-color-scheme="dark"] .cardHeader {
-  border-bottom-color: var(--mantine-color-body);
-  background-color: var(--mantine-color-body);
-  color: var(--mantine-color-pink-filled); /* Neon pink */
 }
 
 .cardBody {
@@ -280,30 +224,15 @@
   letter-spacing: 1px;
 }
 
-[data-mantine-color-scheme="dark"] .accentButton {
-  border-color: var(--mantine-color-body);
-  box-shadow: 3px 3px 0px 0px var(--mantine-color-body);
-  background-color: var(--mantine-color-cyan-filled); /* Neon cyan in dark mode */
-  color: var(--mantine-color-bright);
-}
-
 .accentButton:hover {
   transform: translate(-1px, -1px);
   box-shadow: 4px 4px 0px 0px var(--mantine-color-bright);
   filter: brightness(1.1);
 }
 
-[data-mantine-color-scheme="dark"] .accentButton:hover {
-  box-shadow: 4px 4px 0px 0px var(--mantine-color-body);
-}
-
 .accentButton:active {
   transform: translate(2px, 2px);
   box-shadow: 1px 1px 0px 0px var(--mantine-color-bright);
-}
-
-[data-mantine-color-scheme="dark"] .accentButton:active {
-  box-shadow: 1px 1px 0px 0px var(--mantine-color-body);
 }
 
 /* Control buttons list */
@@ -328,35 +257,18 @@
   font-size: 0.8rem;
 }
 
-[data-mantine-color-scheme="dark"] .secondaryButton {
-  border-color: var(--mantine-color-body);
-  box-shadow: 2px 2px 0px 0px var(--mantine-color-body);
-  background-color: var(--mantine-color-dark-6);
-  color: var(--mantine-color-body);
-}
-
 .secondaryButton:hover {
   transform: translate(-1px, -1px);
   box-shadow: 3px 3px 0px 0px var(--mantine-color-bright);
-  background-color: var(--mantine-color-yellow-filled); /* Neon yellow on hover */
-  color: var(--mantine-color-bright);
-}
-
-[data-mantine-color-scheme="dark"] .secondaryButton:hover {
-  box-shadow: 3px 3px 0px 0px var(--mantine-color-body);
   background-color: var(
-    --mantine-color-green-filled
-  ); /* Neon green on hover in dark mode */
+    --mantine-color-yellow-filled
+  ); /* Neon yellow on hover */
   color: var(--mantine-color-bright);
 }
 
 .secondaryButton:active {
   transform: translate(1px, 1px);
   box-shadow: 1px 1px 0px 0px var(--mantine-color-bright);
-}
-
-[data-mantine-color-scheme="dark"] .secondaryButton:active {
-  box-shadow: 1px 1px 0px 0px var(--mantine-color-body);
 }
 
 /* Logs and system messages list */
@@ -373,11 +285,6 @@
   gap: 6px;
 }
 
-[data-mantine-color-scheme="dark"] .consoleLog {
-  border-color: var(--mantine-color-body);
-  background-color: var(--mantine-color-dark-9);
-}
-
 .consoleLine {
   display: flex;
   gap: 8px;
@@ -386,10 +293,6 @@
 .timestamp {
   color: var(--mantine-color-pink-filled); /* Neon pink */
   font-weight: bold;
-}
-
-[data-mantine-color-scheme="dark"] .timestamp {
-  color: var(--mantine-color-green-filled); /* Neon green */
 }
 
 .text {
@@ -480,12 +383,6 @@
   align-items: center;
   font-size: 0.75rem;
   font-weight: bold;
-}
-
-[data-mantine-color-scheme="dark"] .footer {
-  border-color: var(--mantine-color-body);
-  box-shadow: 2px 2px 0px 0px var(--mantine-color-body);
-  background-color: var(--mantine-color-dark-7);
 }
 
 .colorToggle {

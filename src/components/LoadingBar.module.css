@@ -9,11 +9,6 @@
 }
 
 /* Dark mode adjustment if needed, but neo-brutalist uses black borders */
-[data-mantine-color-scheme="dark"] .container {
-  background-color: var(--mantine-color-dark-7);
-  border-color: var(--mantine-color-body);
-  box-shadow: 4px 4px 0px 0px var(--mantine-color-body);
-}
 
 @keyframes jitter {
   0% {
@@ -50,11 +45,6 @@
   display: flex;
   align-items: center;
   padding: 4px;
-}
-
-[data-mantine-color-scheme="dark"] .track {
-  border-color: var(--mantine-color-body);
-  background-color: var(--mantine-color-dark-9);
 }
 
 .fill {
@@ -97,10 +87,6 @@
   color: var(--mantine-color-bright);
 }
 
-[data-mantine-color-scheme="dark"] .statusText {
-  color: var(--mantine-color-body);
-}
-
 .percentBadge {
   background-color: var(--mantine-color-bright);
   color: var(--mantine-color-green-filled); /* High contrast neon green */
@@ -108,13 +94,6 @@
   border: 1px solid var(--mantine-color-bright);
   box-shadow: 2px 2px 0px 0px var(--mantine-color-bright);
   font-weight: bold;
-}
-
-[data-mantine-color-scheme="dark"] .percentBadge {
-  background-color: var(--mantine-color-body);
-  color: var(--mantine-color-pink-filled); /* High contrast neon pink */
-  border-color: var(--mantine-color-body);
-  box-shadow: 2px 2px 0px 0px var(--mantine-color-body);
 }
 
 /* Segmented Blocks View */
@@ -132,21 +111,10 @@
   background-color: transparent;
 }
 
-[data-mantine-color-scheme="dark"] .segment {
-  border-color: var(--mantine-color-dark-4);
-}
-
 .segmentActive {
   background-color: var(--mantine-color-cyan-filled); /* High contrast cyan */
   border-color: var(--mantine-color-bright);
   animation: segment-pulse 0.4s steps(2) infinite alternate;
-}
-
-[data-mantine-color-scheme="dark"] .segmentActive {
-  background-color: var(
-    --mantine-color-yellow-filled
-  ); /* High contrast neon yellow */
-  border-color: var(--mantine-color-body);
 }
 
 @keyframes segment-pulse {
@@ -177,15 +145,4 @@
 .button:active {
   transform: translate(1px, 1px);
   box-shadow: 1px 1px 0px 0px var(--mantine-color-bright);
-}
-
-[data-mantine-color-scheme="dark"] .button {
-  background-color: var(--mantine-color-dark-6);
-  color: var(--mantine-color-body);
-  border-color: var(--mantine-color-body);
-  box-shadow: 2px 2px 0px 0px var(--mantine-color-body);
-}
-
-[data-mantine-color-scheme="dark"] .button:active {
-  box-shadow: 1px 1px 0px 0px var(--mantine-color-body);
 }
