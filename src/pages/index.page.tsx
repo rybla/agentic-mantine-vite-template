@@ -137,7 +137,7 @@ export function IndexPage() {
               <LoadingBar
                 autoSimulate
                 label="STREAMING SECTOR_7_PACKETS"
-                speed={500}
+                speed={100}
                 onComplete={() => addLog("SECTOR_7 DATA PACKETS FULLY LOADED.")}
               />
             </div>

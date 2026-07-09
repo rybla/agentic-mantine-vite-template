@@ -82,7 +82,7 @@ export function LoadingBar({
   // High contrast background gradient for stripes:
   const backgroundStyle = {
     backgroundColor: "#000000",
-    backgroundImage: `repeating-linear-gradient(45deg, ${color}, ${color} 10px, #000000 10px, #000000 20px)`,
+    backgroundImage: `repeating-conic-gradient(from 0deg at center, ${color}, ${color} 10deg, #000000 30deg, #000000 30deg)`,
     width: `${progress}%`,
   };
 
@@ -122,7 +122,7 @@ export function LoadingBar({
           </Box>
         ) : (
           <Box
-            className={classes["fill"]}
+            className={`${classes["fill"]} ${isFinished ? classes["fillCompleted"] : ""}`}
             style={backgroundStyle}
             data-testid="striped-fill"
           />

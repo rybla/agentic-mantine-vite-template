@@ -23,6 +23,12 @@ describe("LoadingBar Component", () => {
     expect(fill).toHaveStyle({ width: "60%" });
   });
 
+  it("applies the fillCompleted class when progress is 100% for striped variant", () => {
+    render(<LoadingBar value={100} variant="striped" />);
+    const fill = screen.getByTestId("striped-fill");
+    expect(fill.className).toContain("fillCompleted");
+  });
+
   it("renders the segmented progress bar blocks", () => {
     // 12 segments total. 50% means 6 active segments.
     render(<LoadingBar value={50} variant="segmented" />);
