@@ -63,7 +63,7 @@
 .resultBox {
   border: 1px solid var(--mantine-color-bright);
   box-shadow: 4px 4px 0px 0px var(--mantine-color-bright);
-  background-color: var(--mantine-color-yellow-filled); /* Neon yellow */
+  background-color: var(--mantine-color-yellow-filled);
   color: var(--mantine-color-bright);
   padding: 12px 24px;
   text-align: center;
@@ -115,7 +115,7 @@
   padding: 10px 24px;
   border: 1px solid var(--mantine-color-bright);
   box-shadow: 4px 4px 0px 0px var(--mantine-color-bright);
-  background-color: var(--mantine-color-cyan-filled); /* Neon cyan */
+  background-color: var(--mantine-color-cyan-filled);
   color: var(--mantine-color-bright);
   cursor: pointer;
   transition: all 0.05s;
@@ -126,7 +126,7 @@
 .spinBtn:hover {
   background-color: var(
     --mantine-color-green-filled
-  ); /* Swaps to neon green on hover */
+  );
 }
 
 .spinBtn:active:not(:disabled) {

@@ -6,157 +6,9 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-  color: var(--mantine-color-bright);
+  color: var(--mantine-color-dark-text);
   background-color: var(--mantine-color-body);
   min-height: 100vh;
-}
-
-.header {
-  border: 1px solid var(--mantine-color-bright);
-  box-shadow: 4px 4px 0px 0px var(--mantine-color-bright);
-  background-color: var(--mantine-color-body);
-  padding: 16px 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.brand {
-  font-weight: 900;
-  font-size: 1.25rem;
-  letter-spacing: 2px;
-  color: var(--mantine-color-pink-filled); /* Neon pink */
-  animation: crt-flicker 3s steps(2) infinite;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.brand:hover {
-  animation: jitter 0.08s steps(2) infinite;
-}
-
-.nav {
-  display: flex;
-  gap: 12px;
-}
-
-.navLink {
-  border: 1px solid var(--mantine-color-bright);
-  box-shadow: 2px 2px 0px 0px var(--mantine-color-bright);
-  background-color: var(--mantine-color-body);
-  color: var(--mantine-color-bright);
-  text-decoration: none;
-  padding: 6px 14px;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  transition: all 0.05s steps(2);
-}
-
-.navLink:hover {
-  transform: translate(-1px, -1px);
-  box-shadow: 3px 3px 0px 0px var(--mantine-color-bright);
-}
-
-.activeNavLinkHome {
-  background-color: var(--mantine-color-green-filled); /* Neon green */
-  color: var(--mantine-color-bright);
-}
-
-.activeNavLinkAbout {
-  background-color: var(--mantine-color-pink-filled); /* Neon pink */
-  color: var(--mantine-color-bright);
-}
-
-/* System Hero */
-.hero {
-  border: 1px solid var(--mantine-color-bright);
-  box-shadow: 5px 5px 0px 0px var(--mantine-color-bright);
-  background-color: var(--mantine-color-body);
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Add a scanner visual line overlay in the hero section */
-.scanlineOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background:
-    linear-gradient(
-      transparent 50%,
-      color-mix(in srgb, var(--mantine-color-bright) 12%) 50%
-    ),
-    linear-gradient(
-      90deg,
-      color-mix(in srgb, var(--mantine-color-pink-filled) 4%),
-      color-mix(in srgb, var(--mantine-color-green-filled) 2%),
-      color-mix(in srgb, var(--mantine-color-cyan-filled) 4%)
-    );
-  background-size:
-    100% 4px,
-    6px 100%;
-  pointer-events: none;
-}
-
-.sweep {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: color-mix(
-    in srgb,
-    var(--mantine-color-green-filled) 25%,
-    transparent
-  ); /* Semi-transparent neon green */
-  animation: scan-sweep 4s linear infinite;
-  pointer-events: none;
-}
-
-@keyframes scan-sweep {
-  0% {
-    top: 0%;
-  }
-
-  100% {
-    top: 100%;
-  }
-}
-
-.title {
-  font-size: 2.25rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin: 0;
-  line-height: 1.1;
-  color: var(--mantine-color-bright);
-}
-
-.heroSubtitle {
-  font-size: 0.95rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: var(--mantine-color-dark-light);
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.accentSpan {
-  color: var(--mantine-color-cyan-filled); /* Neon cyan */
-  font-weight: 900;
 }
 
 /* Grid layout for columns */
@@ -186,8 +38,8 @@
 
 .cardHeader {
   border-bottom: 1px solid var(--mantine-color-bright);
-  background-color: var(--mantine-color-bright);
-  color: var(--mantine-color-yellow-filled); /* Neon yellow */
+  background-color: var(--mantine-color-gray-filled);
+  color: var(--mantine-color-yellow-filled);
   padding: 8px 16px;
   font-weight: 900;
   text-transform: uppercase;
@@ -210,7 +62,7 @@
 .accentButton {
   border: 1px solid var(--mantine-color-bright);
   box-shadow: 3px 3px 0px 0px var(--mantine-color-bright);
-  background-color: var(--mantine-color-pink-filled); /* Neon pink background */
+  background-color: var(--mantine-color-pink-filled);
   color: var(--mantine-color-body);
   font-family: var(--mantine-font-family-monospace, monospace);
   font-weight: 900;
@@ -262,7 +114,7 @@
   box-shadow: 3px 3px 0px 0px var(--mantine-color-bright);
   background-color: var(
     --mantine-color-yellow-filled
-  ); /* Neon yellow on hover */
+  );
   color: var(--mantine-color-bright);
 }
 
@@ -291,7 +143,7 @@
 }
 
 .timestamp {
-  color: var(--mantine-color-pink-filled); /* Neon pink */
+  color: var(--mantine-color-pink-filled);
   font-weight: bold;
 }
 
@@ -369,35 +221,4 @@
   100% {
     transform: translate(0, 0) skew(0deg);
   }
-}
-
-/* Style for the footer */
-.footer {
-  border: 1px solid var(--mantine-color-bright);
-  box-shadow: 2px 2px 0px 0px var(--mantine-color-bright);
-  background-color: var(--mantine-color-bright);
-  color: var(--mantine-color-body);
-  padding: 12px 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.75rem;
-  font-weight: bold;
-}
-
-.colorToggle {
-  cursor: pointer;
-  border: 1px solid var(--mantine-color-body);
-  background-color: transparent;
-  color: var(--mantine-color-body);
-  padding: 4px 8px;
-  font-family: var(--mantine-font-family-monospace, monospace);
-  font-weight: bold;
-  font-size: 0.75rem;
-  transition: all 0.05s steps(2);
-}
-
-.colorToggle:hover {
-  background-color: var(--mantine-color-body);
-  color: var(--mantine-color-bright);
 }

@@ -1,7 +1,7 @@
+import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import classes from "@/pages/about.module.css";
-import { useMantineColorScheme } from "@mantine/core";
 import { useEffect, useRef, useState } from "react";
 
 interface LogLine {
@@ -11,7 +11,6 @@ interface LogLine {
 }
 
 export function AboutPage() {
-  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   const [logs, setLogs] = useState<LogLine[]>([
     { id: 1, time: "18:15:20", text: "DIAGNOSTIC UNIT ONLINE." },
     { id: 2, time: "18:15:21", text: "AWAITING COLD-START INITIATION..." },
@@ -230,17 +229,7 @@ export function AboutPage() {
         </div>
       </div>
 
-      {/* FOOTER */}
-      <footer className={classes["footer"]}>
-        <span>STYLING ENGINE: NEO_BRUTALIST_v2.6</span>
-        <button
-          type="button"
-          className={classes["colorToggle"]}
-          onClick={() => toggleColorScheme()}
-        >
-          THEME: {colorScheme.toUpperCase()}
-        </button>
-      </footer>
+      <Footer />
     </div>
   );
 }

@@ -1,14 +1,13 @@
 import { FilterableList } from "@/components/FilterableList";
+import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { LoadingBar } from "@/components/LoadingBar";
 import { RandomSamplerWheel } from "@/components/RandomSamplerWheel";
 import classes from "@/pages/index.module.css";
-import { useMantineColorScheme } from "@mantine/core";
 import { useState } from "react";
 
 export function IndexPage() {
-  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   const [logs, setLogs] = useState<
     Array<{ id: number; text: string; time: string }>
   >([
@@ -176,17 +175,7 @@ export function IndexPage() {
         </div>
       </div>
 
-      {/* FOOTER */}
-      <footer className={classes["footer"]}>
-        <span>STYLING ENGINE: NEO_BRUTALIST_v2.6</span>
-        <button
-          type="button"
-          className={classes["colorToggle"]}
-          onClick={() => toggleColorScheme()}
-        >
-          THEME: {colorScheme.toUpperCase()}
-        </button>
-      </footer>
+      <Footer />
     </div>
   );
 }

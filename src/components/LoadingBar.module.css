@@ -88,8 +88,8 @@
 }
 
 .percentBadge {
-  background-color: var(--mantine-color-bright);
-  color: var(--mantine-color-green-filled); /* High contrast neon green */
+  background-color: var(--mantine-color-green-filled);
+  color: var(--mantine-color-green-color);
   padding: 2px 8px;
   border: 1px solid var(--mantine-color-bright);
   box-shadow: 2px 2px 0px 0px var(--mantine-color-bright);
@@ -112,7 +112,7 @@
 }
 
 .segmentActive {
-  background-color: var(--mantine-color-cyan-filled); /* High contrast cyan */
+  background-color: var(--mantine-color-cyan-filled);
   border-color: var(--mantine-color-bright);
   animation: segment-pulse 0.4s steps(2) infinite alternate;
 }
