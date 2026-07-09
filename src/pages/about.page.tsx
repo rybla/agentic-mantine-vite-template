@@ -1,4 +1,5 @@
 import { Header } from "@/components/Header";
+import { Hero } from "@/components/Hero";
 import classes from "@/pages/about.module.css";
 import { useMantineColorScheme } from "@mantine/core";
 import { useEffect, useRef, useState } from "react";
@@ -74,14 +75,10 @@ export function AboutPage() {
     <div className={classes["page"]}>
       <Header name="about" />
 
-      {/* SYSTEM HERO */}
-      <section className={classes["hero"]}>
-        <div className={classes["scanlineOverlay"]} />
-        <h1 className={classes["title"]}>SYSTEM DIRECTORY & MANUAL</h1>
-        <div className={classes["heroSubtitle"]}>
-          <span>DIRECTORY ARCHIVE // SECTOR_902</span>
-        </div>
-      </section>
+      <Hero
+        title={<>{"SYSTEM DIRECTORY & MANUAL"}</>}
+        subtitle={<>{"DIRECTORY ARCHIVE // SECTOR_902"}</>}
+      />
 
       {/* LAYOUT GRID */}
       <div className={classes["layoutGrid"]}>

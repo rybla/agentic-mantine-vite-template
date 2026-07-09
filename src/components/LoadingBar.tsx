@@ -1,5 +1,5 @@
 /* eslint-disable @eslint-react/no-array-index-key -- Stable index keys are necessary for generating custom static block segments */
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Box, Group, Text } from "@mantine/core";
 import classes from "@/components/LoadingBar.module.css";
 
@@ -34,30 +34,29 @@ export function LoadingBar({
   const isControlled = value !== undefined;
   const progress = isControlled ? value : internalValue;
 
+  const onCompleteRef = useRef(onComplete);
   useEffect(() => {
-    if (isControlled) {
-      if (progress >= 100 && onComplete) {
-        onComplete();
-      }
+    onCompleteRef.current = onComplete;
+  }, [onComplete]);
+
+  // Trigger onComplete when progress reaches 100%
+  useEffect(() => {
+    if (progress >= 100) {
+      onCompleteRef.current?.();
+    }
+  }, [progress]);
+
+  const isFinished = progress >= 100;
+
+  // Handle simulation when not controlled and autoSimulate is enabled
+  useEffect(() => {
+    if (isControlled || !autoSimulate || isFinished) {
       return;
     }
-
-    if (!autoSimulate) {
-      return;
-    }
-
-    // Set internal value asynchronously to avoid synchronous setState inside effect warning!
-    const initTimer = setTimeout(() => {
-      setInternalValue(0);
-    }, 0);
 
     const interval = setInterval(() => {
       setInternalValue((prev) => {
         if (prev >= 100) {
-          clearInterval(interval);
-          if (onComplete) {
-            onComplete();
-          }
           return 100;
         }
         // Gritty jumpy step increments rather than smooth +1
@@ -68,10 +67,9 @@ export function LoadingBar({
     }, speed);
 
     return () => {
-      clearTimeout(initTimer);
       clearInterval(interval);
     };
-  }, [isControlled, autoSimulate, speed, onComplete, progress]);
+  }, [isControlled, autoSimulate, speed, isFinished]);
 
   // Determine if it should jitter (for a gritty look at high completion rates or during load)
   const isJittering = progress > 0 && progress < 100;

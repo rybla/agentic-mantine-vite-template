@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 import { LoadingBar } from "@/components/LoadingBar";
-import { render, screen } from "@test-utils";
+import { act, render, screen } from "@test-utils";
 
 describe("LoadingBar Component", () => {
   it("renders with default label and value", () => {
@@ -43,5 +43,61 @@ describe("LoadingBar Component", () => {
     const onCompleteMock = vi.fn();
     render(<LoadingBar value={100} onComplete={onCompleteMock} />);
     expect(onCompleteMock).toHaveBeenCalled();
+  });
+
+  it("auto-simulates progress, calls onComplete, and can be restarted", async () => {
+    vi.useFakeTimers();
+    const onCompleteMock = vi.fn();
+    render(
+      <LoadingBar autoSimulate={true} onComplete={onCompleteMock} speed={50} />
+    );
+
+    // Starts at 0%
+    expect(screen.getByText("0%")).toBeInTheDocument();
+
+    // Advance timers by 100ms (should have ticked at least once/twice at 50ms interval)
+    act(() => {
+      vi.advanceTimersByTime(100);
+    });
+
+    // Progress should have increased beyond 0%
+    const progressTextAfterTick = screen.getByText(/(\d+)%/);
+    const progressVal = parseInt(progressTextAfterTick.textContent || "0", 10);
+    expect(progressVal).toBeGreaterThan(0);
+
+    // Fast-forward to completion
+    act(() => {
+      vi.advanceTimersByTime(2000);
+    });
+
+    // Should now be 100%
+    expect(screen.getByText("100%")).toBeInTheDocument();
+    expect(onCompleteMock).toHaveBeenCalled();
+
+    // Restart button should be visible
+    const restartButton = screen.getByText("Restart Simulation");
+    expect(restartButton).toBeInTheDocument();
+
+    const { fireEvent } = await import("@test-utils");
+    act(() => {
+      fireEvent.click(restartButton);
+    });
+
+    // Should be reset to 0% and restart simulation
+    expect(screen.getByText("0%")).toBeInTheDocument();
+
+    // Advance again and make sure progress goes up again
+    act(() => {
+      vi.advanceTimersByTime(100);
+    });
+
+    const progressTextAfterRestartTick = screen.getByText(/(\d+)%/);
+    const progressValAfterRestart = parseInt(
+      progressTextAfterRestartTick.textContent || "0",
+      10
+    );
+    expect(progressValAfterRestart).toBeGreaterThan(0);
+
+    vi.useRealTimers();
   });
 });

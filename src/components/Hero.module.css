@@ -1,0 +1,42 @@
+.hero {
+  border: 1px solid var(--mantine-color-black, #000);
+  box-shadow: 5px 5px 0px 0px var(--mantine-color-black, #000);
+  background-color: var(--mantine-color-white, #fff);
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+[data-mantine-color-scheme="dark"] .hero {
+  border-color: var(--mantine-color-white, #fff);
+  box-shadow: 5px 5px 0px 0px var(--mantine-color-white, #fff);
+  background-color: var(--mantine-color-dark-7, #1a1b1e);
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  line-height: 1.1;
+  color: var(--mantine-color-black, #000);
+}
+
+[data-mantine-color-scheme="dark"] .title {
+  color: var(--mantine-color-white, #fff);
+}
+
+.heroSubtitle {
+  font-size: 0.95rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--mantine-color-gray-6, #868e96);
+}
+
+[data-mantine-color-scheme="dark"] .heroSubtitle {
+  color: var(--mantine-color-dark-3, #909296);
+}

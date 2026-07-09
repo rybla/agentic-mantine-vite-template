@@ -1,5 +1,6 @@
 import { FilterableList } from "@/components/FilterableList";
 import { Header } from "@/components/Header";
+import { Hero } from "@/components/Hero";
 import { LoadingBar } from "@/components/LoadingBar";
 import { RandomSamplerWheel } from "@/components/RandomSamplerWheel";
 import classes from "@/pages/index.module.css";
@@ -34,30 +35,30 @@ export function IndexPage() {
     <div className={classes["page"]}>
       <Header name="index" />
 
-      {/* SYSTEM HERO */}
-      <section className={classes["hero"]}>
-        <div className={classes["scanlineOverlay"]} />
-        <div className={classes["sweep"]} />
-        <h1 className={classes["title"]}>VIRTUAL CONTROL CENTER</h1>
-        <div className={classes["heroSubtitle"]}>
-          <span>
-            HOST: <span className={classes["accentSpan"]}>STATIC_VITE_V9</span>
-          </span>
-          <span>
-            STATUS:{" "}
-            <span
-              className={classes["accentSpan"]}
-              style={{ color: "#39ff14" }}
-            >
-              ONLINE
+      <Hero
+        title={<>{"Agentic Mantine Vite Template"}</>}
+        subtitle={
+          <>
+            <span>
+              {"HOST: "}
+              <span className={classes["accentSpan"]}>{"STATIC_VITE_V9"}</span>
+            </span>{" "}
+            <span>
+              {"STATUS: "}
+              <span
+                className={classes["accentSpan"]}
+                style={{ color: "#39ff14" }}
+              >
+                {"ONLINE"}
+              </span>{" "}
             </span>
-          </span>
-          <span>
-            ACTIONS:{" "}
-            <span className={classes["accentSpan"]}>{counter} OPS</span>
-          </span>
-        </div>
-      </section>
+            <span>
+              {"ACTIONS: "}
+              <span className={classes["accentSpan"]}>{counter} OPS</span>
+            </span>
+          </>
+        }
+      />
 
       {/* DASHBOARD GRID */}
       <div className={classes["dashboardGrid"]}>
@@ -136,7 +137,7 @@ export function IndexPage() {
               <LoadingBar
                 autoSimulate
                 label="STREAMING SECTOR_7_PACKETS"
-                speed={150}
+                speed={500}
                 onComplete={() => addLog("SECTOR_7 DATA PACKETS FULLY LOADED.")}
               />
             </div>

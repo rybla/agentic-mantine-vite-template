@@ -28,7 +28,7 @@ function PageLink(props: { source: PageName; target: PageName }) {
       to={pages[props.target]!.route}
       className={`${classes["navLink"]} ${props.source === props.target ? classes["activeNavLink"] : ""}`}
     >
-      [ {props.target} ]
+      {props.target}
     </Link>
   );
 }
