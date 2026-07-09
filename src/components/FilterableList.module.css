@@ -117,7 +117,7 @@
 
 .badge {
   background-color: var(--mantine-color-bright);
-  color: var(--mantine-color-cyan-filled);
+  color: var(--mantine-color-cyan-text);
   font-size: 0.75rem;
   padding: 2px 6px;
   border: 1px solid var(--mantine-color-bright);

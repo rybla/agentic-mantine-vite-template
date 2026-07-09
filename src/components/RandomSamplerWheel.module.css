@@ -85,7 +85,7 @@
 
   50% {
     background-color: var(--mantine-color-bright);
-    color: var(--mantine-color-yellow-filled);
+    color: var(--mantine-color-yellow-text);
   }
 }
 
@@ -102,7 +102,7 @@
 
   50% {
     background-color: var(--mantine-color-body);
-    color: var(--mantine-color-pink-filled);
+    color: var(--mantine-color-pink-text);
   }
 }
 

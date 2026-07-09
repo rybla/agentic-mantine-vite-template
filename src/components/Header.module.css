@@ -14,7 +14,7 @@
   font-weight: 900;
   font-size: 1.25rem;
   letter-spacing: 2px;
-  color: var(--mantine-color-pink-filled);
+  color: var(--mantine-color-pink-text);
   animation: crt-flicker 3s steps(2) infinite;
   cursor: pointer;
   display: flex;
